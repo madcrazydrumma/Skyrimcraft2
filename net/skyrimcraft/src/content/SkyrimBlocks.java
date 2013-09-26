@@ -9,12 +9,10 @@ import net.skyrimcraft.src.block.SkyrimBlock;
 
 public class SkyrimBlocks 
 {
-	public static int id = Config.blockID;
-	
-	public static final Block anvil = new SkyrimAnvil(getNextBlockNum()).setUnlocalizedName("Anvil");
-	public static final Block ebonyOre = new SkyrimBlock(getNextBlockNum(), Material.iron).setUnlocalizedName("EbonyOre");
-	public static final Block malachiteOre = new SkyrimBlock(getNextBlockNum(), Material.iron).setUnlocalizedName("MalachiteOre");
-	public static final Block moonstoneOre = new SkyrimBlock(getNextBlockNum(), Material.iron).setUnlocalizedName("MoonstoneOre");
+	public static final Block anvil = new SkyrimAnvil(Config.addBlock("Anvil")).setUnlocalizedName("Anvil");
+	public static final Block ebonyOre = new SkyrimBlock(Config.addBlock("Ebony Ore"), Material.iron).setUnlocalizedName("EbonyOre");
+	public static final Block malachiteOre = new SkyrimBlock(Config.addBlock("Malachite Ore"), Material.iron).setUnlocalizedName("MalachiteOre");
+	public static final Block moonstoneOre = new SkyrimBlock(Config.addBlock("Moonstone Ore"), Material.iron).setUnlocalizedName("MoonstoneOre");
 
 	public static void add()
 	{
@@ -22,10 +20,5 @@ public class SkyrimBlocks
 		SkyrimRegistry.registerBlock(ebonyOre, "Ebony Ore");
 		SkyrimRegistry.registerBlock(malachiteOre, "Malachite Ore");
 		SkyrimRegistry.registerBlock(moonstoneOre, "Moonstone Ore");
-	}
-	
-	public static int getNextBlockNum()
-	{
-		return id++;
 	}
 }
