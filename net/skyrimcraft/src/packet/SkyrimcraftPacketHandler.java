@@ -1,4 +1,4 @@
-package net.skyrimcraft.packet;
+package net.skyrimcraft.src.packet;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;

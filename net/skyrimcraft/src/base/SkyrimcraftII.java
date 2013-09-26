@@ -7,6 +7,7 @@ import net.skyrimcraft.src.content.SkyrimBlocks;
 import net.skyrimcraft.src.content.SkyrimItems;
 import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
+import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -18,7 +19,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraft"}, packetHandler = SkyrimcraftPacketHandler.class)
 
 public class SkyrimcraftII
 {
@@ -48,7 +49,7 @@ public class SkyrimcraftII
 		data.name = Util.MOD_NAME;
 		data.version = Util.VERSION;
 		data.url = "http://WEBSITZ.K04M!";
-		data.authorList = Arrays.asList(new String[] { "sheenrox82", "mr_simba" });
+		data.authorList = Arrays.asList(new String[] { "sheenrox82", "mr_simba", "Madcrazydrumma" });
 		data.description = Util.MOD_NAME + " is a Minecraft mod that will ultimately bring as much of the" +
 				" Skyrim world to Minecraft as possible. It will eventually contain an RPG realm;" +
 				" where players can play one of the most exciting games in another amazing game, Minecraft!" +
@@ -57,7 +58,6 @@ public class SkyrimcraftII
 				" life inside a 3D blocky landscape. We hope you enjoy this mod just as much as we enjoyed making it!";
 
 		config.init(event.getSuggestedConfigurationFile());
-		
 		SkyrimBlocks.add();
 		SkyrimItems.add();
 		SkyrimRegistry.register();
