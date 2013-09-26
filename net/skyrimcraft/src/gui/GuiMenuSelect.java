@@ -2,8 +2,9 @@ package net.skyrimcraft.src.gui;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.inventory.GuiInventory;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.skyrimcraft.src.base.Util;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
@@ -95,8 +96,10 @@ public class GuiMenuSelect extends GuiScreen
 		}
 		if(drawRight == true) {
 			if(par2 == Keyboard.KEY_RETURN) {
-				//ITEMS
-				//remove this gui and show the player inventory
+				//ITEMS <- Sorted
+				 EntityPlayer p = mc.thePlayer;
+				 mc.setIngameFocus();
+				 mc.displayGuiScreen(new GuiInventory(p));
 			}
 		}
 		if(drawLeft == true) {

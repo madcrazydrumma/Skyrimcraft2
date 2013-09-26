@@ -38,9 +38,9 @@ public class SkyrimAnvilCraftingManager
 	private SkyrimAnvilCraftingManager()
 	{
 		recipes = new ArrayList();
-
+		
     	//DAEDRIC
-       /** this.addRecipe(new ItemStack(SkyrimWeapons.daedricSword, 1), new Object[] {
+		/**this.addRecipe(new ItemStack(SkyrimWeapons.daedricSword, 1), new Object[] {
         	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
         this.addRecipe(new ItemStack(SkyrimWeapons.daedricDagger, 1), new Object[] {

@@ -21,7 +21,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraft"}, packetHandler = SkyrimcraftPacketHandler.class)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraftii"}, packetHandler = SkyrimcraftPacketHandler.class)
 public class SkyrimcraftII
 {
 	public static int helmet = 0;
