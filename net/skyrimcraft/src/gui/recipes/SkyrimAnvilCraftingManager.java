@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
+import net.skyrimcraft.src.content.SkyrimItems;
 
 public class SkyrimAnvilCraftingManager
 {
@@ -39,259 +40,263 @@ public class SkyrimAnvilCraftingManager
 	{
 		recipes = new ArrayList();
 		
+		this.addRecipe(new ItemStack(SkyrimItems.leatherStrips, 2), new Object[] {
+			"   ", " # ", "   ", Character.valueOf('#'), Item.leather
+		});
+		
     	//DAEDRIC
-		/**this.addRecipe(new ItemStack(SkyrimWeapons.daedricSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+		this.addRecipe(new ItemStack(SkyrimItems.daedricSword, 1), new Object[] {
+        	" F ", " F ", "#!#", " F ", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricDagger, 1), new Object[] {
+        	" F ", "#!#", " F ", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricArrow, 24), new Object[] {
-    		"#", "!", "F", Character.valueOf('#'), SkyrimItems.ebonyIngot, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), Block.wood
+        this.addRecipe(new ItemStack(SkyrimItems.daedricArrow, 24), new Object[] {
+    		"#", "!", "F", Character.valueOf('#'), SkyrimItems.ebonyIngot, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricBow, 1), new Object[] {
-        	" F#", "F #", "F #", " F#", Character.valueOf('#'), SkyrimIngredients.daedraHeart, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricBow, 1), new Object[] {
+        	" F#", "F #", "F #", " F#", Character.valueOf('#'), SkyrimItems.daedraHeart, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.daedricBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimIngredients.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.daedricBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.daedraHeart, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
 
     	//EBONY
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonySword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonySword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.ebonyIngot, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ebonyBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
+        this.addRecipe(new ItemStack(SkyrimItems.ebonyBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.ebonyIngot
         });
 
     	//DWARVEN
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        /**this.addRecipe(new ItemStack(SkyrimItems.dwarvenSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.dwarvenIngot, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dwarvenBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
+        this.addRecipe(new ItemStack(SkyrimItems.dwarvenBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.dwarvenIngot
         });
 
     	//ELVEN
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.elvenArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.moonstoneIngot, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.elvenBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.elvenBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
+        this.addRecipe(new ItemStack(SkyrimItems.elvenBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.moonstoneIngot
         });
 
     	//GLASS
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.glassArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.malmoonIngot, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.glassBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.glassBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
+        this.addRecipe(new ItemStack(SkyrimItems.glassBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), SkyrimItems.malmoonIngot
         });
 
     	//IRON
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.ironArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), Item.ingotIron, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.ironBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
+        this.addRecipe(new ItemStack(SkyrimItems.ironBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.stick, Character.valueOf('F'), Item.ingotIron
         });
 
     	//STEEL
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.steelArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.steelIngot, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.steelBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
+        this.addRecipe(new ItemStack(SkyrimItems.steelBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.steelIngot
         });
 
     	//ORCISH
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.orcishArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.orichalcumIngot, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.orcishBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.orcishBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
+        this.addRecipe(new ItemStack(SkyrimItems.orcishBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), Item.ingotIron, Character.valueOf('F'), SkyrimItems.orichalcumIngot
         });
 
     	//DRAGONBONE
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneSword, 1), new Object[] {
-        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneSword, 1), new Object[] {
+        	" F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneDagger, 1), new Object[] {
-        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneDagger, 1), new Object[] {
+        	" F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneWarhammer, 1), new Object[] {
-        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneWarhammer, 1), new Object[] {
+        	"FFF", "FFF", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneWaraxe, 1), new Object[] {
-        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneWaraxe, 1), new Object[] {
+        	"FFF", "F!F", " ! ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneMace, 1), new Object[] {
-        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneMace, 1), new Object[] {
+        	"FFF", " F ", " F ", "#!#", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneArrow, 24), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneArrow, 24), new Object[] {
     		"#", "!", "F", Character.valueOf('#'), SkyrimItems.ebonyIngot, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), Block.wood
     	});
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneBow, 1), new Object[] {
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneBow, 1), new Object[] {
         	" F#", "F #", "F #", " F#", Character.valueOf('#'), Item.silk, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneGreatsword, 1), new Object[] {
-        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneGreatsword, 1), new Object[] {
+        	" F ", " F ", "F!F", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
-        this.addRecipe(new ItemStack(SkyrimWeapons.dragonBoneBattleaxe, 1), new Object[] {
-        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrip, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
+        this.addRecipe(new ItemStack(SkyrimItems.dragonBoneBattleaxe, 1), new Object[] {
+        	"FFF", "FF ", " ! ", "###", Character.valueOf('#'), SkyrimItems.leatherStrips, Character.valueOf('!'), SkyrimItems.ebonyIngot, Character.valueOf('F'), SkyrimItems.dragonBone
         });
         **/
 		Collections.sort(this.recipes, new AnvilRecipeSorter(this));

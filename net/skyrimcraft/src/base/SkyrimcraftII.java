@@ -2,11 +2,13 @@ package net.skyrimcraft.src.base;
 
 import java.util.Arrays;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.skyrimcraft.src.content.SkyrimBlocks;
 import net.skyrimcraft.src.content.SkyrimEntities;
 import net.skyrimcraft.src.content.SkyrimItems;
 import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
+import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
@@ -39,6 +41,8 @@ public class SkyrimcraftII
 	public static Config config;
 	public static SkyrimAnvilCraftingManager craftingManagerInstance;
 	
+	private Minecraft mc = Minecraft.getMinecraft();
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -68,6 +72,7 @@ public class SkyrimcraftII
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
+		mc.ingameGUI = new GuiSkyrimIngame(mc);
 	}
 	
 	@EventHandler

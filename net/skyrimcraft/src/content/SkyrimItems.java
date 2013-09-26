@@ -28,7 +28,7 @@ public class SkyrimItems
 	public static EnumToolMaterial EbonyMace = EnumHelper.addToolMaterial("EbonyMace", 8, -1, 8.0F, 16, 2);
 	public static EnumToolMaterial EbonyGreatsword = EnumHelper.addToolMaterial("EbonyGreatsword", 8, -1, 8.0F, 22, 2);
 	public static EnumToolMaterial EbonyBattleaxe = EnumHelper.addToolMaterial("EbonyBattleaxe", 8, -1, 8.0F, 23, 2);
-
+	
 	public static final Item ebonyIngot = new SkyrimItem(Config.addItem("Ebony Ingot")).setUnlocalizedName("EbonyIngot");
 	public static final Item malachiteIngot = new SkyrimItem(Config.addItem("Malachite Ingot")).setUnlocalizedName("MalachiteIngot");
 	public static final Item moonstoneIngot = new SkyrimItem(Config.addItem("Moonstone Ingot")).setUnlocalizedName("MoonstoneIngot");
@@ -39,7 +39,8 @@ public class SkyrimItems
 	public static final Item sweetRoll = new SkyrimFood(Config.addItem("Sweet Roll"), 2, 2, false).setUnlocalizedName("SweetRoll");
 	public static final Item manaPotion = new SkyrimFood(Config.addItem("Mana Potion"), 2, 2, false).setUnlocalizedName("ManaPotion");
 	public static final Item extraMagickaPotion = new SkyrimFood(Config.addItem("Extra Magicka Potion"), 2, 2, false).setUnlocalizedName("ExtraMagickaPotion");
-
+	public static final Item leatherStrips = new SkyrimItem(Config.addItem("Leather Strips")).setUnlocalizedName("LeatherStrips");
+	
 	public static final Item daedricSword = new SkyrimWeapon(Config.addItem("Daedric Sword"), DaedricSword).setUnlocalizedName("DaedricSword");
 	public static final Item daedricDagger = new SkyrimWeapon(Config.addItem("Daedric Dagger"), DaedricDagger).setUnlocalizedName("DaedricDagger");
 	public static final Item daedricWarhammer = new SkyrimTwoHanded(Config.addItem("Daedric Warhammer"), DaedricWarhammer).setUnlocalizedName("DaedricWarhammer");
@@ -64,6 +65,7 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(cabbage, "Cabbage");
 		SkyrimRegistry.registerItem(carrot, "Carrot");
 		SkyrimRegistry.registerItem(daedraHeart, "Daedra Heart");
+		SkyrimRegistry.registerItem(leatherStrips, "Leather Strips");
 		SkyrimRegistry.registerItem(ebonyIngot, "Ebony Ingot");
 		SkyrimRegistry.registerItem(malachiteIngot, "Malachite Ingot");
 		SkyrimRegistry.registerItem(moonstoneIngot, "Moonstone Ingot");
