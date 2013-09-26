@@ -42,5 +42,9 @@ public class SkyrimRegistry
 		GameRegistry.registerBlock(block, name);
 		LanguageRegistry.addName(block, name);
 	}
-
+	
+	public static void registerEntity()
+	{
+		
+	}
 }

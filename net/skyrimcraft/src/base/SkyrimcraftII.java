@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.skyrimcraft.src.content.SkyrimBlocks;
+import net.skyrimcraft.src.content.SkyrimEntities;
 import net.skyrimcraft.src.content.SkyrimItems;
 import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
@@ -21,10 +22,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraft"}, packetHandler = SkyrimcraftPacketHandler.class)
-
 public class SkyrimcraftII
 {
-
 	public static int helmet = 0;
 	public static int chestplate = 1;
 	public static int leggings = 2;
@@ -49,8 +48,8 @@ public class SkyrimcraftII
 		data.modId = Util.MOD_ID;
 		data.name = Util.MOD_NAME;
 		data.version = Util.VERSION;
-		data.url = "http://WEBSITZ.K04M!";
-		data.authorList = Arrays.asList(new String[] { "sheenrox82", "mr_simba", "Madcrazydrumma" });
+		data.url = "Website?";
+		data.authorList = Arrays.asList(new String[] { "Sheenrox82", "Mr_Simba", "Madcrazydrumma" });
 		data.description = Util.MOD_NAME + " is a Minecraft mod that will ultimately bring as much of the" +
 				" Skyrim world to Minecraft as possible. It will eventually contain an RPG realm;" +
 				" where players can play one of the most exciting games in another amazing game, Minecraft!" +
@@ -62,6 +61,7 @@ public class SkyrimcraftII
 		SkyrimBlocks.add();
 		SkyrimItems.add();
 		SkyrimRegistry.register();
+		SkyrimEntities.register();
 	}
 
 	@EventHandler
