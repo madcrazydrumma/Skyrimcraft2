@@ -21,6 +21,7 @@ public class SkyrimItems
 	public static EnumToolMaterial DaedricMace = EnumHelper.addToolMaterial("DaedricMace", 8, -1, 8.0F, 16, 2);
 	public static EnumToolMaterial DaedricGreatsword = EnumHelper.addToolMaterial("DaedricGreatsword", 8, -1, 8.0F, 24, 2);
 	public static EnumToolMaterial DaedricBattleaxe = EnumHelper.addToolMaterial("DaedricBattleaxe", 8, -1, 8.0F, 25, 2);
+	
 	public static EnumToolMaterial EbonySword = EnumHelper.addToolMaterial("EbonySword", 8, -1, 8.0F, 13, 2);
 	public static EnumToolMaterial EbonyDagger = EnumHelper.addToolMaterial("EbonyDagger", 8, -1, 8.0F, 10, 2);
 	public static EnumToolMaterial EbonyWarhammer = EnumHelper.addToolMaterial("EbonyWarhammer", 8, -1, 8.0F, 25, 2);
@@ -32,6 +33,8 @@ public class SkyrimItems
 	public static final Item ebonyIngot = new SkyrimItem(Config.addItem("Ebony Ingot")).setUnlocalizedName("EbonyIngot");
 	public static final Item malachiteIngot = new SkyrimItem(Config.addItem("Malachite Ingot")).setUnlocalizedName("MalachiteIngot");
 	public static final Item moonstoneIngot = new SkyrimItem(Config.addItem("Moonstone Ingot")).setUnlocalizedName("MoonstoneIngot");
+	public static final Item orichalcumIngot = new SkyrimItem(Config.addItem("Orichalcum Ingot")).setUnlocalizedName("OrichalcumIngot");
+	
 	public static final Item daedraHeart = new SkyrimItem(Config.addItem("Daedra Heart")).setUnlocalizedName("DaedraHeart");
 	public static final Item cabbage = new SkyrimFood(Config.addItem("Cabbage"), 4, 2, false).setUnlocalizedName("Cabbage");
 	public static final Item carrot = new SkyrimFood(Config.addItem("Carrot"), 2, 2, false).setUnlocalizedName("Carrot");
@@ -50,6 +53,7 @@ public class SkyrimItems
 	public static final Item daedricBattleaxe = new SkyrimTwoHanded(Config.addItem("Daedric Battleaxe"), DaedricBattleaxe).setUnlocalizedName("DaedricBattleaxe");
 	public static final Item daedricBow = new SkyrimBow(Config.addItem("Daedric Bow")).setUnlocalizedName("DaedricBow");
 	public static final Item daedricArrow = new SkyrimArrow(Config.addItem("Daedric Arrow")).setUnlocalizedName("DaedricArrow");
+	
 	public static final Item ebonySword = new SkyrimWeapon(Config.addItem("Ebony Sword"), EbonySword).setUnlocalizedName("EbonySword");
 	public static final Item ebonyDagger = new SkyrimWeapon(Config.addItem("Ebony Dagger"), EbonyDagger).setUnlocalizedName("EbonyDagger");
 	public static final Item ebonyWarhammer = new SkyrimTwoHanded(Config.addItem("Ebony Warhammer"), EbonyWarhammer).setUnlocalizedName("EbonyWarhammer");
@@ -66,9 +70,12 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(carrot, "Carrot");
 		SkyrimRegistry.registerItem(daedraHeart, "Daedra Heart");
 		SkyrimRegistry.registerItem(leatherStrips, "Leather Strips");
+		
 		SkyrimRegistry.registerItem(ebonyIngot, "Ebony Ingot");
 		SkyrimRegistry.registerItem(malachiteIngot, "Malachite Ingot");
 		SkyrimRegistry.registerItem(moonstoneIngot, "Moonstone Ingot");
+		SkyrimRegistry.registerItem(orichalcumIngot, "Orichalcum Ingot");
+		
 		SkyrimRegistry.registerItem(ebonySword, "Ebony Sword");
 		SkyrimRegistry.registerItem(ebonyDagger, "Ebony Dagger");
 		SkyrimRegistry.registerItem(ebonyWarhammer, "Ebony Warhammer");
@@ -78,6 +85,7 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(ebonyBow, "Ebony Bow");
 		SkyrimRegistry.registerItem(ebonyGreatsword, "Ebony Greatsword");
 		SkyrimRegistry.registerItem(ebonyBattleaxe, "Ebony Battleaxe");
+		
 		SkyrimRegistry.registerItem(daedricSword, "Daedric Sword");
 		SkyrimRegistry.registerItem(daedricDagger, "Daedric Dagger");
 		SkyrimRegistry.registerItem(daedricWarhammer, "Daedric Warhammer");

@@ -37,25 +37,9 @@ public class GuiSkyrimIngame extends Gui
 		}
 		fontrenderer.drawStringWithShadow("Gold: \u00a76" + props.getGold(), 10, 10, 0xffffff);
 		
-		ResourceLocation cross = new ResourceLocation("skyrimcraftii", "textures/gui/icons.png");
+		ResourceLocation icons = new ResourceLocation("skyrimcraftii", "textures/gui/icons.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.func_110434_K().func_110577_a(cross);
-		drawTexturedModalRect(width / 2 - 110, 10, 0, 37, 221, 14);
-	}
-	
-	@ForgeSubscribe
-	public void onEntityConstructing(EntityConstructing event) {
-		if (event.entity instanceof EntityPlayer && ExtendedPlayer.get((EntityPlayer) event.entity) == null)
-			ExtendedPlayer.register((EntityPlayer) event.entity);
-		if (event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME) == null)
-			event.entity.registerExtendedProperties(ExtendedPlayer.EXT_PROP_NAME, new ExtendedPlayer((EntityPlayer) event.entity));
-	}
-	
-	@ForgeSubscribe
-	public void onEntityJoinWorld(EntityJoinWorldEvent event)
-	{
-		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayer) {
-			ExtendedPlayer.get((EntityPlayer) event.entity).sync();
-		}
+		mc.func_110434_K().func_110577_a(icons);
+		drawTexturedModalRect(width / 2 - 110, 10, 0, 37, 221, 14); //The compass bar at top
 	}
 }

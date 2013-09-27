@@ -11,6 +11,7 @@ import net.skyrimcraft.src.content.SkyrimItems;
 import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
+import net.skyrimcraft.src.handler.GameEventsHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -73,6 +74,7 @@ public class SkyrimcraftII
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
+		MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
 		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 	}
 	
