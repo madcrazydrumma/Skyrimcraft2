@@ -6,6 +6,5 @@ public class SkyrimEntities
 {
 	public static void register()
 	{
-		SkyrimRegistry.registerEntity();
 	}
 }

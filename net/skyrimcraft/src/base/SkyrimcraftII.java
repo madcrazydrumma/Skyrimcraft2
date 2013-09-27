@@ -93,7 +93,8 @@ public class SkyrimcraftII
 	}
 
 	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event) {
-		//TickRegistry.registerTickHandler(new SkyrimTickHandler(), Side.CLIENT);
+	public void serverStarting(FMLServerStartingEvent event)
+	{
+		
 	}
 }

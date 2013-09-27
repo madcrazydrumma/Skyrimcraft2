@@ -1,11 +1,15 @@
 package net.skyrimcraft.src.base;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityEggInfo;
+import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.DimensionManager;
 import net.skyrimcraft.src.handler.GuiHandler;
 import net.skyrimcraft.src.world.gen.WorldGenOverworld;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -43,8 +47,17 @@ public class SkyrimRegistry
 		LanguageRegistry.addName(block, name);
 	}
 	
-	public static void registerEntity()
+	public static void registerEntity(Class entityClass, String entityName)
 	{
-		
+		int entityID = Config.addEntity(entityName);
+		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID);
+		EntityRegistry.registerModEntity(entityClass, entityName, entityID, SkyrimcraftII.instance, 128, 1, true);
+		LanguageRegistry.instance().addStringLocalization("entity." + entityName + ".name", entityName);
+	}
+	
+	public static void registerDimension(int id, Class worldProvider)
+	{
+		DimensionManager.registerProviderType(id, worldProvider, true);
+		DimensionManager.registerDimension(id, id);
 	}
 }
