@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import net.skyrimcraft.src.content.SkyrimBlocks;
 import net.skyrimcraft.src.content.SkyrimEntities;
 import net.skyrimcraft.src.content.SkyrimItems;
@@ -72,7 +73,7 @@ public class SkyrimcraftII
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init();
-		mc.ingameGUI = new GuiSkyrimIngame(mc);
+		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 	}
 	
 	@EventHandler

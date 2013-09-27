@@ -27,7 +27,7 @@ public class SkyrimKeyHandler extends KeyHandler
 
 	@Override
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
-		if(kb.equals(menu)) {
+		if(kb.equals(menu) && mc.inGameHasFocus) {
 			mc.thePlayer.openGui(SkyrimcraftII.instance, 21, mc.theWorld, mc.thePlayer.chunkCoordX, mc.thePlayer.chunkCoordY, mc.thePlayer.chunkCoordZ);
 		}
 	}
