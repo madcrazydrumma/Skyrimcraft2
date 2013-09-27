@@ -13,12 +13,10 @@ import cpw.mods.fml.common.TickType;
 
 public class SkyrimKeyHandler extends KeyHandler
 {
-	static KeyBinding menu = new KeyBinding("Options Menu", Keyboard.KEY_M);
-	private Minecraft mc = Minecraft.getMinecraft();
-	
-	public SkyrimKeyHandler() {
-		super(new KeyBinding[] {menu}, new boolean[] {false});
-	}
+	 public SkyrimKeyHandler(KeyBinding[] keyBindings, boolean[] repeatings)
+     {
+             super(keyBindings, repeatings);
+     }
 	
 	@Override
 	public String getLabel() {
@@ -26,8 +24,10 @@ public class SkyrimKeyHandler extends KeyHandler
 	}
 
 	@Override
-	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
-		if(kb.equals(menu) && mc.inGameHasFocus) {
+	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat)
+	{
+		Minecraft mc = Minecraft.getMinecraft();
+		if(kb.equals(SkyrimcraftII.key) && mc.inGameHasFocus) {
 			mc.thePlayer.openGui(SkyrimcraftII.instance, 21, mc.theWorld, mc.thePlayer.chunkCoordX, mc.thePlayer.chunkCoordY, mc.thePlayer.chunkCoordZ);
 		}
 	}

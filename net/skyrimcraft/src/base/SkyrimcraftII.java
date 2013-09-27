@@ -2,7 +2,7 @@ package net.skyrimcraft.src.base;
 
 import java.util.Arrays;
 
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.skyrimcraft.src.content.SkyrimBlocks;
@@ -12,9 +12,13 @@ import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
 import net.skyrimcraft.src.handler.GameEventsHandler;
-import net.skyrimcraft.src.handler.SkyrimTickHandler;
+import net.skyrimcraft.src.handler.SkyrimKeyHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
+
+import org.lwjgl.input.Keyboard;
+
+import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -25,8 +29,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.TickRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraftii"}, packetHandler = SkyrimcraftPacketHandler.class)
@@ -36,7 +38,7 @@ public class SkyrimcraftII
 	public static int chestplate = 1;
 	public static int leggings = 2;
 	public static int boots = 3;
-	
+
 	@Instance(Util.MOD_ID)
 	public static SkyrimcraftII instance = new SkyrimcraftII();
 
@@ -46,8 +48,7 @@ public class SkyrimcraftII
 	public static final CreativeTabs tab = new TabSkyrimcraft("SkyrimcraftII");
 	public static Config config;
 	public static SkyrimAnvilCraftingManager craftingManagerInstance;
-	
-	private Minecraft mc = Minecraft.getMinecraft();
+	public static KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -72,6 +73,9 @@ public class SkyrimcraftII
 		SkyrimItems.add();
 		SkyrimRegistry.register();
 		SkyrimEntities.register();
+		KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
+		boolean[] repeat = {false};
+		KeyBindingRegistry.registerKeyBinding(new SkyrimKeyHandler(key, repeat));
 	}
 
 	@EventHandler
@@ -81,13 +85,13 @@ public class SkyrimcraftII
 		MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
 		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 	}
-	
+
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		config.initPost();
 	}
-	
+
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event) {
 		//TickRegistry.registerTickHandler(new SkyrimTickHandler(), Side.CLIENT);
