@@ -1,13 +1,18 @@
 package net.skyrimcraft.src.base;
 
+import org.lwjgl.input.Keyboard;
+
 import net.minecraft.block.Block;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
+import net.skyrimcraft.src.handler.CrossMenuKeyHandler;
 import net.skyrimcraft.src.handler.GuiHandler;
 import net.skyrimcraft.src.world.gen.WorldGenOverworld;
+import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -32,6 +37,9 @@ public class SkyrimRegistry
 			GameRegistry.removeBiome(BiomeGenBase.jungle);
 			GameRegistry.removeBiome(BiomeGenBase.jungleHills);	
 			GameRegistry.removeBiome(BiomeGenBase.beach);
+			KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
+			boolean[] repeat = {false};
+			KeyBindingRegistry.registerKeyBinding(new CrossMenuKeyHandler(key, repeat));
 		}
 	}
 

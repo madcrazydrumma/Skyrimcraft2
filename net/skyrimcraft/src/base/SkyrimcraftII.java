@@ -12,7 +12,7 @@ import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
 import net.skyrimcraft.src.handler.GameEventsHandler;
-import net.skyrimcraft.src.handler.SkyrimKeyHandler;
+import net.skyrimcraft.src.handler.CrossMenuKeyHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
 
@@ -48,7 +48,6 @@ public class SkyrimcraftII
 	public static final CreativeTabs tab = new TabSkyrimcraft("SkyrimcraftII");
 	public static Config config;
 	public static SkyrimAnvilCraftingManager craftingManagerInstance;
-	public static KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -73,15 +72,12 @@ public class SkyrimcraftII
 		SkyrimItems.add();
 		SkyrimRegistry.register();
 		SkyrimEntities.register();
-		KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
-		boolean[] repeat = {false};
-		KeyBindingRegistry.registerKeyBinding(new SkyrimKeyHandler(key, repeat));
+		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		proxy.init();
 		MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
 		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 	}
