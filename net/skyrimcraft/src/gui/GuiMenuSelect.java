@@ -152,7 +152,7 @@ public class GuiMenuSelect extends GuiScreen
 			drawString(fontRenderer, "Magic", width / 2 - 135, height / 2 - 4, 0xffffff);
 		}else{
 			drawString(fontRenderer, "Skills", width / 2 - 4, height / 2 - 65, 0xffffff);
-			drawString(fontRenderer, "Map", width / 2 - 6, height / 2 + 55, 0xffffff);
+			drawString(fontRenderer, "Map", width / 2 - 1, height / 2 + 55, 0xffffff);
 			drawString(fontRenderer, "Items", width / 2 + 118, height / 2 - 4, 0xffffff);
 			drawString(fontRenderer, "Magic", width / 2 - 135, height / 2 - 4, 0xffffff);
 		}
