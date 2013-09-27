@@ -12,6 +12,7 @@ import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
 import net.skyrimcraft.src.handler.GameEventsHandler;
+import net.skyrimcraft.src.handler.SkyrimTickHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -22,7 +23,10 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraftii"}, packetHandler = SkyrimcraftPacketHandler.class)
@@ -82,5 +86,10 @@ public class SkyrimcraftII
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		config.initPost();
+	}
+	
+	@EventHandler
+	public void serverStarting(FMLServerStartingEvent event) {
+		//TickRegistry.registerTickHandler(new SkyrimTickHandler(), Side.CLIENT);
 	}
 }

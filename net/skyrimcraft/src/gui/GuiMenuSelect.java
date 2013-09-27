@@ -104,8 +104,9 @@ public class GuiMenuSelect extends GuiScreen
 		}
 		if(drawLeft == true) {
 			if(par2 == Keyboard.KEY_RETURN) {
-				//MAGIC
-				//?
+				//MAGIC <- Sorted
+				mc.setIngameFocus();
+				mc.displayGuiScreen(new GuiMagic());
 			}
 		}
 	}

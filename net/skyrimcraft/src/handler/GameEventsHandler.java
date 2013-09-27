@@ -1,5 +1,7 @@
 package net.skyrimcraft.src.handler;
 
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -21,6 +23,7 @@ public class GameEventsHandler
 	{
 		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayer) {
 			ExtendedPlayer.get((EntityPlayer) event.entity).sync();
+			TickRegistry.registerTickHandler(new SkyrimTickHandler(), Side.CLIENT);
 		}
 	}
 }
