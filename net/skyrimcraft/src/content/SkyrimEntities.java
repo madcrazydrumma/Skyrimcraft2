@@ -9,6 +9,7 @@ public class SkyrimEntities
 {
 	public static void register()
 	{
-		SkyrimRegistry.registerEntity(EntityImperialGuard.class, "Imperial Guard", 0xfff0a0, 0x445fec, new RenderImperialGuard(new ModelBiped(), 0.5F));
+		SkyrimRegistry.registerEntity(EntityImperialGuard.class, "Imperial Guard");
+		SkyrimRegistry.registerEgg(EntityImperialGuard.class, 0xfff0a0, 0x445fec);
 	}
 }

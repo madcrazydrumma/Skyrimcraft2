@@ -26,6 +26,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class SkyrimRegistry 
 {
+	public static int id = 500;
+	
 	public static void register()
 	{
 		NetworkRegistry.instance().registerGuiHandler(SkyrimcraftII.instance, new GuiHandler());	
@@ -61,13 +63,25 @@ public class SkyrimRegistry
 		LanguageRegistry.addName(block, name);
 	}
 	
-	public static void registerEntity(Class<? extends Entity> entityClass, String entityName, int bkEggColor, int fgEggColor, RenderLiving renderClass) {
-		int id = Config.addEntity(entityName);
-
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName, id);
-		EntityList.entityEggs.put(Integer.valueOf(id), new EntityEggInfo(id, bkEggColor, fgEggColor));
-		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderClass);
+	public static void registerEntity(Class entityClass, String entityName)
+	{
+		int entityID = Config.addEntity(entityName);
+		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID);
+		EntityRegistry.registerModEntity(entityClass, entityName, entityID, SkyrimcraftII.instance, 128, 1, true);
+		LanguageRegistry.instance().addStringLocalization("entity." + entityName + ".name", entityName);
 	}
+
+	public static void registerEgg(Class entityClass, int color1, int color2)
+	{
+		int ID = uniqueEggID();
+		EntityList.IDtoClassMapping.put(ID, entityClass);
+		EntityList.entityEggs.put(ID, new EntityEggInfo(ID, color1, color2));
+	}
+
+	public static int uniqueEggID()
+	{
+		return id++;
+	}	
 
 	public static void addSpawn(Class<? extends EntityLiving> entityClass, int spawnProb, int min, int max, BiomeGenBase[] biomes) {
 		if (spawnProb > 0) {
