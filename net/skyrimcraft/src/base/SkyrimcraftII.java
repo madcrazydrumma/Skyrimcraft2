@@ -2,7 +2,6 @@ package net.skyrimcraft.src.base;
 
 import java.util.Arrays;
 
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.skyrimcraft.src.content.SkyrimBlocks;
@@ -12,13 +11,9 @@ import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
 import net.skyrimcraft.src.gui.GuiSkyrimIngame;
 import net.skyrimcraft.src.gui.recipes.SkyrimAnvilCraftingManager;
 import net.skyrimcraft.src.handler.GameEventsHandler;
-import net.skyrimcraft.src.handler.CrossMenuKeyHandler;
+import net.skyrimcraft.src.handler.SkyrimTickHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
-
-import org.lwjgl.input.Keyboard;
-
-import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -80,6 +75,7 @@ public class SkyrimcraftII
 	{
 		MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
 		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
+		MinecraftForge.EVENT_BUS.register(new SkyrimTickHandler());
 	}
 
 	@EventHandler

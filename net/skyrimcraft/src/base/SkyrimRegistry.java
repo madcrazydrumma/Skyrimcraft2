@@ -1,18 +1,24 @@
 package net.skyrimcraft.src.base;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
 import net.skyrimcraft.src.handler.CrossMenuKeyHandler;
 import net.skyrimcraft.src.handler.GuiHandler;
 import net.skyrimcraft.src.world.gen.WorldGenOverworld;
+
+import org.lwjgl.input.Keyboard;
+
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -55,12 +61,18 @@ public class SkyrimRegistry
 		LanguageRegistry.addName(block, name);
 	}
 	
-	public static void registerEntity(Class entityClass, String entityName)
-	{
-		int entityID = Config.addEntity(entityName);
-		EntityRegistry.registerGlobalEntityID(entityClass, entityName, entityID);
-		EntityRegistry.registerModEntity(entityClass, entityName, entityID, SkyrimcraftII.instance, 128, 1, true);
-		LanguageRegistry.instance().addStringLocalization("entity." + entityName + ".name", entityName);
+	public static void registerEntity(Class<? extends Entity> entityClass, String entityName, int bkEggColor, int fgEggColor, RenderLiving renderClass) {
+		int id = Config.addEntity(entityName);
+
+		EntityRegistry.registerGlobalEntityID(entityClass, entityName, id);
+		EntityList.entityEggs.put(Integer.valueOf(id), new EntityEggInfo(id, bkEggColor, fgEggColor));
+		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderClass);
+	}
+
+	public static void addSpawn(Class<? extends EntityLiving> entityClass, int spawnProb, int min, int max, BiomeGenBase[] biomes) {
+		if (spawnProb > 0) {
+			EntityRegistry.addSpawn(entityClass, spawnProb, min, max, EnumCreatureType.creature, biomes);
+		}
 	}
 	
 	public static void registerDimension(int id, Class worldProvider)

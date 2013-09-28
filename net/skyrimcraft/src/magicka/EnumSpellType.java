@@ -8,7 +8,7 @@ public enum EnumSpellType
 	RESTORATION(3),
 	SHOUT(4),
 	POWERS(5);
-	//ACTIVE_EFFECTS();
+	//ACTIVE_EFFECTS(6);
 	
 	private EnumSpellType(int id) {
 	}

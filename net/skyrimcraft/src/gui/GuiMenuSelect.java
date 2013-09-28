@@ -5,6 +5,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.skyrimcraft.src.base.SkyrimcraftII;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
@@ -106,7 +107,7 @@ public class GuiMenuSelect extends GuiScreen
 			if(par2 == Keyboard.KEY_RETURN) {
 				//MAGIC <- Sorted
 				mc.setIngameFocus();
-				mc.displayGuiScreen(new GuiMagic());
+				mc.thePlayer.openGui(SkyrimcraftII.instance, 22, mc.theWorld, mc.thePlayer.chunkCoordX, mc.thePlayer.chunkCoordY, mc.thePlayer.chunkCoordZ);
 			}
 		}
 	}
@@ -126,21 +127,21 @@ public class GuiMenuSelect extends GuiScreen
 		{
 			drawTexturedModalRect(width / 2 - 170, height / 2 - 10, 53, 0, 17, 18);
 			drawString(fontRenderer, "Skills", width / 2 - 4, height / 2 - 65, 0xffffff);
-			drawString(fontRenderer, "Map", width / 2 - 2, height / 2 + 55, 0xffffff);
+			drawString(fontRenderer, "Map", width / 2 - 1, height / 2 + 55, 0xffffff);
 			drawString(fontRenderer, "Items", width / 2 + 118, height / 2 - 4, 0xffffff);
 			m.drawSizedText(fontRenderer, "Magic", width / 2 - 144, height / 2 - 4, 1);
 		}else if(drawRight)
 		{
 			drawTexturedModalRect(width / 2 + 165, height / 2 - 10, 36, 0, 17, 18);
 			drawString(fontRenderer, "Skills", width / 2 - 4, height / 2 - 65, 0xffffff);
-			drawString(fontRenderer, "Map", width / 2 - 2, height / 2 + 55, 0xffffff);
+			drawString(fontRenderer, "Map", width / 2 - 1, height / 2 + 55, 0xffffff);
 			m.drawSizedText(fontRenderer, "Items", width / 2 + 115, height / 2 - 4, 1);
 			drawString(fontRenderer, "Magic", width / 2 - 135, height / 2 - 4, 0xffffff);
 		}else if(drawUp)
 		{
 			drawTexturedModalRect(width / 2 - 2, height / 2 - 90, 0, 0, 17, 18);
 			m.drawSizedText(fontRenderer, "Skills", width / 2 - 11, height / 2 - 65, 1);
-			drawString(fontRenderer, "Map", width / 2 - 2, height / 2 + 55, 0xffffff);
+			drawString(fontRenderer, "Map", width / 2 - 1, height / 2 + 55, 0xffffff);
 			drawString(fontRenderer, "Items", width / 2 + 118, height / 2 - 4, 0xffffff);
 			drawString(fontRenderer, "Magic", width / 2 - 135, height / 2 - 4, 0xffffff);
 		}else if(drawDown)
