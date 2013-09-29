@@ -87,6 +87,5 @@ public class SkyrimcraftII
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		
 	}
 }

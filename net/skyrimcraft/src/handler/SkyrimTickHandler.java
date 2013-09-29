@@ -16,7 +16,6 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
-import net.skyrimcraft.src.base.ExtendedPlayer;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
@@ -24,6 +23,8 @@ public class SkyrimTickHandler extends Gui implements ITickHandler
 {
 	public boolean drawChestString = false;
 	private Minecraft mc = Minecraft.getMinecraft();
+	
+	private String s = "";
 	
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
@@ -64,10 +65,13 @@ public class SkyrimTickHandler extends Gui implements ITickHandler
 		FontRenderer fontrenderer = mc.fontRenderer;
 		
 		if(drawChestString == true) {
-			drawCenteredString(fontrenderer, "Open Chest (F)", width / 2 + 10, height / 2, 0xffffff);
+			s = "Open Chest (F)";
+			System.out.println("CHEST!!");
 		} else {
-			drawCenteredString(fontrenderer, "", width / 2 + 10, height / 2, 0xffffff);
+			s = "";
 		}
+		
+		drawCenteredString(fontrenderer, "", width / 2 + 10, height / 2, 0xffffff);
 	}
 	
 	@Override
