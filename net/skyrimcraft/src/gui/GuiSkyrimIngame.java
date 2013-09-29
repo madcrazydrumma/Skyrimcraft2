@@ -39,7 +39,7 @@ public class GuiSkyrimIngame extends Gui
 		
 		ResourceLocation icons = new ResourceLocation("skyrimcraftii", "textures/gui/icons.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.func_110434_K().func_110577_a(icons);
+		mc.renderEngine.bindTexture(icons);
 		drawTexturedModalRect(width / 2 - 110, 10, 0, 37, 221, 14); //The compass bar at top
 	}
 }

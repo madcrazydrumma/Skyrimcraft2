@@ -118,7 +118,7 @@ public class GuiMenuSelect extends GuiScreen
 		
 		ResourceLocation cross = new ResourceLocation("skyrimcraftii", "textures/gui/cross.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.func_110434_K().func_110577_a(cross);
+		mc.renderEngine.bindTexture(cross);
 		drawTexturedModalRect(width / 2 - 120, height / 2 - 50, 0, 81, 230, 101);
 		
 		GuiMethods m = new GuiMethods();

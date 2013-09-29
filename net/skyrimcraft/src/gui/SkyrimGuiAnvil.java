@@ -34,7 +34,7 @@ public class SkyrimGuiAnvil extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.renderEngine.func_110577_a(new ResourceLocation(Util.MOD_ID + ":" + "textures/gui/" + "anvil.png"));
+        mc.renderEngine.bindTexture(new ResourceLocation(Util.MOD_ID + ":" + "textures/gui/" + "anvil.png"));
         int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;
 		this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
