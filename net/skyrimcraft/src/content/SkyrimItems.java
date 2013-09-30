@@ -1,10 +1,12 @@
 package net.skyrimcraft.src.content;
 
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
 import net.skyrimcraft.src.base.Config;
 import net.skyrimcraft.src.base.SkyrimRegistry;
+import net.skyrimcraft.src.item.SkyrimArmor;
 import net.skyrimcraft.src.item.SkyrimArrow;
 import net.skyrimcraft.src.item.SkyrimBow;
 import net.skyrimcraft.src.item.SkyrimFood;
@@ -64,6 +66,11 @@ public class SkyrimItems
 	public static final Item ebonyBow = new SkyrimBow(Config.addItem("Ebony Bow")).setUnlocalizedName("EbonyBow");
 	public static final Item ebonyArrow = new SkyrimArrow(Config.addItem("Ebony Arrow")).setUnlocalizedName("EbonyArrow");
 	
+	public static final Item imperialChestplate = new SkyrimArmor(Config.addItem("Imperial Chestplate"), EnumArmorMaterial.DIAMOND, 10, 1, "imperial").setUnlocalizedName("imperialChestplate");
+	public static final Item imperialLeggings = new SkyrimArmor(Config.addItem("Imperial Leggings"), EnumArmorMaterial.DIAMOND, 10, 2, "imperial").setUnlocalizedName("imperialLeggings");
+	public static final Item imperialHelmet = new SkyrimArmor(Config.addItem("Imperial Helmet"), EnumArmorMaterial.DIAMOND, 10, 0, "imperial").setUnlocalizedName("imperialHelmet");
+	public static final Item imperialBoots = new SkyrimArmor(Config.addItem("Imperial Boots"), EnumArmorMaterial.DIAMOND, 10, 3, "imperial").setUnlocalizedName("imperialBoots");
+	
 	public static void add()
 	{
 		SkyrimRegistry.registerItem(cabbage, "Cabbage");
@@ -95,5 +102,10 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(daedricBow, "Daedric Bow");
 		SkyrimRegistry.registerItem(daedricGreatsword, "Daedric Greatsword");
 		SkyrimRegistry.registerItem(daedricBattleaxe, "Daedric Battleaxe");
+		
+		SkyrimRegistry.registerItem(imperialChestplate, "Imperial Chestplate");
+		SkyrimRegistry.registerItem(imperialLeggings, "Imperial Leggings");
+		SkyrimRegistry.registerItem(imperialHelmet, "Imperial Helmet");
+		SkyrimRegistry.registerItem(imperialBoots, "Imperial Boots");
 	}
 }
