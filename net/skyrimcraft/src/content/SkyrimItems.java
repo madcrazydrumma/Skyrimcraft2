@@ -13,9 +13,12 @@ import net.skyrimcraft.src.item.SkyrimFood;
 import net.skyrimcraft.src.item.SkyrimItem;
 import net.skyrimcraft.src.item.SkyrimTwoHanded;
 import net.skyrimcraft.src.item.SkyrimWeapon;
+import net.skyrimcraft.src.proxy.CommonProxy;
 
 public class SkyrimItems 
 {
+	public static int armor = CommonProxy.addArmor("armor");
+	
 	public static EnumToolMaterial DaedricSword = EnumHelper.addToolMaterial("DaedricSword", 8, -1, 8.0F, 14, 2);
 	public static EnumToolMaterial DaedricDagger = EnumHelper.addToolMaterial("DaedricDagger", 8, -1, 8.0F, 11, 2);
 	public static EnumToolMaterial DaedricWarhammer = EnumHelper.addToolMaterial("DaedricWarhammer", 8, -1, 8.0F, 27, 2);
@@ -66,10 +69,10 @@ public class SkyrimItems
 	public static final Item ebonyBow = new SkyrimBow(Config.addItem("Ebony Bow")).setUnlocalizedName("EbonyBow");
 	public static final Item ebonyArrow = new SkyrimArrow(Config.addItem("Ebony Arrow")).setUnlocalizedName("EbonyArrow");
 	
-	public static final Item imperialChestplate = new SkyrimArmor(Config.addItem("Imperial Chestplate"), EnumArmorMaterial.DIAMOND, 10, 1, "imperial").setUnlocalizedName("imperialChestplate");
-	public static final Item imperialLeggings = new SkyrimArmor(Config.addItem("Imperial Leggings"), EnumArmorMaterial.DIAMOND, 10, 2, "imperial").setUnlocalizedName("imperialLeggings");
-	public static final Item imperialHelmet = new SkyrimArmor(Config.addItem("Imperial Helmet"), EnumArmorMaterial.DIAMOND, 10, 0, "imperial").setUnlocalizedName("imperialHelmet");
-	public static final Item imperialBoots = new SkyrimArmor(Config.addItem("Imperial Boots"), EnumArmorMaterial.DIAMOND, 10, 3, "imperial").setUnlocalizedName("imperialBoots");
+	public static final Item imperialChestplate = new SkyrimArmor(Config.addItem("Imperial Chestplate"), EnumArmorMaterial.DIAMOND, armor, 1, "imperial").setUnlocalizedName("imperialChestplate");
+	public static final Item imperialLeggings = new SkyrimArmor(Config.addItem("Imperial Leggings"), EnumArmorMaterial.DIAMOND, armor, 2, "imperial").setUnlocalizedName("imperialLeggings");
+	public static final Item imperialHelmet = new SkyrimArmor(Config.addItem("Imperial Helmet"), EnumArmorMaterial.DIAMOND, armor, 0, "imperial").setUnlocalizedName("imperialHelmet");
+	public static final Item imperialBoots = new SkyrimArmor(Config.addItem("Imperial Boots"), EnumArmorMaterial.DIAMOND, armor, 3, "imperial").setUnlocalizedName("imperialBoots");
 	
 	public static void add()
 	{

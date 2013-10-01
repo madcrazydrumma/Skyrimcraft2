@@ -1,5 +1,6 @@
 package net.skyrimcraft.src.gui;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
@@ -118,7 +119,7 @@ public class GuiMenuSelect extends GuiScreen
 		
 		ResourceLocation cross = new ResourceLocation("skyrimcraftii", "textures/gui/cross.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.bindTexture(cross);
+		Minecraft.getMinecraft().renderEngine.bindTexture(cross);
 		drawTexturedModalRect(width / 2 - 120, height / 2 - 50, 0, 81, 230, 101);
 		
 		GuiMethods m = new GuiMethods();

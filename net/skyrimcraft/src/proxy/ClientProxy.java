@@ -14,4 +14,9 @@ public class ClientProxy extends CommonProxy
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityImperialGuard.class, new RenderImperialGuard());
 	}
+	
+	public static int addArmor(String str)
+	{
+		return RenderingRegistry.addNewArmourRendererPrefix(str);
+	}
 }

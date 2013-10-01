@@ -23,10 +23,10 @@ public class SkyrimArmor extends ItemArmor
     {
         if(stack.toString().contains("Leggings"))
         {
-        	return Util.MOD_ID + ":" + fileName + "_2.png";
+        	return Util.MOD_ID + ":" + "textures/armor/" + fileName + "_2.png";
         }
         
-        return Util.MOD_ID + ":" + fileName + "_1.png";
+        return Util.MOD_ID + ":" + "textures/armor/" + fileName + "_1.png";
     }
 	
 	public void registerIcons(IconRegister i)

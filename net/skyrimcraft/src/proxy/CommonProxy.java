@@ -6,4 +6,9 @@ public class CommonProxy
 	{
 		
 	}
+	
+	public static int addArmor(String str)
+	{
+		return 0;
+	}
 }
