@@ -3,13 +3,13 @@ package net.skyrimcraft.src.gui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.skyrimcraft.src.base.ExtendedPlayer;
 
 import org.lwjgl.opengl.GL11;
 
@@ -52,5 +52,20 @@ public class GuiSkyrimIngame extends Gui
 			s = "E";
 		}
 		drawString(fontrenderer, s, width / 2, 13, 0xffffff);
+		
+		ExtendedPlayer props = ExtendedPlayer.get(this.mc.thePlayer);
+		
+		if (props == null || props.getMaxMana() == 0)
+		{
+			return;
+		}
+		
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		
+		GL11.glDisable(GL11.GL_LIGHTING);
+		
+		int manabarwidth = (int)((props.getMana() / props.getMaxMana()) * 50);
+		
+		this.drawRect(10, height - 40, 10 + manabarwidth, height - 48, 0xAA000000);
 	}
 }

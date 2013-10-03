@@ -14,6 +14,7 @@ import net.skyrimcraft.src.handler.GameEventsHandler;
 import net.skyrimcraft.src.handler.SkyrimTickHandler;
 import net.skyrimcraft.src.packet.SkyrimcraftPacketHandler;
 import net.skyrimcraft.src.proxy.CommonProxy;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -67,15 +68,16 @@ public class SkyrimcraftII
 		SkyrimItems.add();
 		SkyrimRegistry.register();
 		SkyrimEntities.register();
-		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
-		MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
-		MinecraftForge.EVENT_BUS.register(new SkyrimTickHandler());
+		if (FMLCommonHandler.instance().getEffectiveSide().isClient()) {
+			MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
+			MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
+			MinecraftForge.EVENT_BUS.register(new SkyrimTickHandler());
+		}
 	}
 
 	@EventHandler
