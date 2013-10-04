@@ -9,7 +9,6 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
-import net.skyrimcraft.src.base.ExtendedPlayer;
 
 import org.lwjgl.opengl.GL11;
 
@@ -34,6 +33,14 @@ public class GuiSkyrimIngame extends Gui
 		mc.renderEngine.bindTexture(icons);
 		drawTexturedModalRect(width / 2 - 110, 10, 0, 37, 221, 14);
 		
+		//BARS
+		drawTexturedModalRect(20, height - 40, 0, 24, 100, 8);
+		drawTexturedModalRect(width / 2 - 50, height - 40, 0, 24, 100, 8);
+		drawTexturedModalRect(width - 120, height - 40, 0, 24, 100, 8);
+		
+		//INNER BARS
+		drawTexturedModalRect(23, height - 39, 0, 60, 94, 4);
+		
 		int direction = MathHelper.floor_double((double)((mc.thePlayer.rotationYaw * 4F) / 360F) + 0.5D) & 3;
 		
 		String s = "";
@@ -52,20 +59,5 @@ public class GuiSkyrimIngame extends Gui
 			s = "E";
 		}
 		drawString(fontrenderer, s, width / 2, 13, 0xffffff);
-		
-		ExtendedPlayer props = ExtendedPlayer.get(this.mc.thePlayer);
-		
-		if (props == null || props.getMaxMana() == 0)
-		{
-			return;
-		}
-		
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		
-		GL11.glDisable(GL11.GL_LIGHTING);
-		
-		int manabarwidth = (int)((props.getMana() / props.getMaxMana()) * 50);
-		
-		this.drawRect(10, height - 40, 10 + manabarwidth, height - 48, 0xAA000000);
 	}
 }
