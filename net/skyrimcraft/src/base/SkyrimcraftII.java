@@ -77,6 +77,7 @@ public class SkyrimcraftII
 			MinecraftForge.EVENT_BUS.register(new GameEventsHandler());
 			MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 			MinecraftForge.EVENT_BUS.register(new SkyrimTickHandler());
+			proxy.addKeybinds();
 		}
 	}
 

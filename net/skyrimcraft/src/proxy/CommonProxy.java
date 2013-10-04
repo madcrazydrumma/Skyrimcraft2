@@ -7,6 +7,10 @@ public class CommonProxy
 		
 	}
 	
+	public static void addKeybinds() {
+		
+	}
+	
 	public static int addArmor(String str)
 	{
 		return 0;

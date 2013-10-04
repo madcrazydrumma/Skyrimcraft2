@@ -45,9 +45,6 @@ public class SkyrimRegistry
 			GameRegistry.removeBiome(BiomeGenBase.jungle);
 			GameRegistry.removeBiome(BiomeGenBase.jungleHills);	
 			GameRegistry.removeBiome(BiomeGenBase.beach);
-			KeyBinding[] key = {new KeyBinding("Cross Menu", Keyboard.KEY_M)};
-			boolean[] repeat = {false};
-			KeyBindingRegistry.registerKeyBinding(new CrossMenuKeyHandler(key, repeat));
 		}
 	}
 
