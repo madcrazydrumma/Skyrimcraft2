@@ -22,9 +22,16 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class SkyrimBow extends ItemBow
 {
-	public static final String[] daedricBow = new String[] {Util.MOD_ID + ":" + "DaedricBow1", Util.MOD_ID + ":" + "DaedricBow2", Util.MOD_ID + ":" + "DaedricBow3"};
-	public static final String[] ebonyBow = new String[] {Util.MOD_ID + ":" + "EbonyBow1", Util.MOD_ID + ":" + "EbonyBow2", Util.MOD_ID + ":" + "EbonyBow3"};
-
+	public static final String[] daedricBow = new String[] {Util.MOD_ID + ":" + "daedricBow1", Util.MOD_ID + ":" + "daedricBow2", Util.MOD_ID + ":" + "daedricBow3"};
+	public static final String[] ebonyBow = new String[] {Util.MOD_ID + ":" + "ebonyBow1", Util.MOD_ID + ":" + "ebonyBow2", Util.MOD_ID + ":" + "ebonyBow3"};
+	public static final String[] glassBow = new String[] {Util.MOD_ID + ":" + "glassBow1", Util.MOD_ID + ":" + "glassBow2", Util.MOD_ID + ":" + "glassBow3"};
+	public static final String[] orcishBow = new String[] {Util.MOD_ID + ":" + "orcishBow1", Util.MOD_ID + ":" + "orcishBow2", Util.MOD_ID + ":" + "orcishBow3"};
+	public static final String[] elvenBow = new String[] {Util.MOD_ID + ":" + "elvenBow1", Util.MOD_ID + ":" + "elvenBow2", Util.MOD_ID + ":" + "elvenBow3"};
+	public static final String[] ancientNordBow = new String[] {Util.MOD_ID + ":" + "ancientNordBow1", Util.MOD_ID + ":" + "ancientNordBow2", Util.MOD_ID + ":" + "ancientNordBow3"};
+	public static final String[] dwarvenBow = new String[] {Util.MOD_ID + ":" + "dwarvenBow1", Util.MOD_ID + ":" + "dwarvenBow2", Util.MOD_ID + ":" + "dwarvenBow3"};
+	public static final String[] dragonBoneBow = new String[] {Util.MOD_ID + ":" + "dragonBoneBow1", Util.MOD_ID + ":" + "dragonBoneBow2", Util.MOD_ID + ":" + "dragonBoneBow3"};
+	public static final String[] longBow = new String[] {Util.MOD_ID + ":" + "longBow1", Util.MOD_ID + ":" + "longBow2", Util.MOD_ID + ":" + "longBow3"};
+	
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
@@ -185,6 +192,76 @@ public class SkyrimBow extends ItemBow
 			for (int i = 0; i < this.iconArray.length; ++i)
 			{
 				this.iconArray[i] = par1IconRegister.registerIcon(ebonyBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.glassBow.itemID) 
+		{
+			this.iconArray = new Icon[glassBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(glassBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.elvenBow.itemID) 
+		{
+			this.iconArray = new Icon[elvenBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(elvenBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.orcishBow.itemID) 
+		{
+			this.iconArray = new Icon[orcishBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(orcishBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.dragonBoneBow.itemID) 
+		{
+			this.iconArray = new Icon[dragonBoneBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(dragonBoneBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.dwarvenBow.itemID) 
+		{
+			this.iconArray = new Icon[dwarvenBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(dwarvenBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.ancientNordBow.itemID) 
+		{
+			this.iconArray = new Icon[ancientNordBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(ancientNordBow[i]);
+			}
+		}
+		
+		if(itemID == SkyrimItems.longbow.itemID) 
+		{
+			this.iconArray = new Icon[longBow.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(longBow[i]);
 			}
 		}
 	}

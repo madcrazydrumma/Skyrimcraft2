@@ -1,5 +1,7 @@
 package net.skyrimcraft.src.proxy;
 
+import net.minecraft.client.model.ModelBiped;
+
 public class CommonProxy 
 {
 	public void init()
@@ -7,7 +9,7 @@ public class CommonProxy
 		
 	}
 	
-	public static void addKeybinds() {
+	public void addKeybinds() {
 		
 	}
 	
@@ -15,4 +17,8 @@ public class CommonProxy
 	{
 		return 0;
 	}
+	
+	public ModelBiped getArmorModel(int id){
+		return null;
+		}
 }

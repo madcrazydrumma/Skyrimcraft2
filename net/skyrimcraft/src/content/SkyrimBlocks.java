@@ -9,10 +9,10 @@ import net.skyrimcraft.src.block.SkyrimBlock;
 
 public class SkyrimBlocks 
 {
-	public static final Block anvil = new SkyrimAnvil(Config.addBlock("Anvil")).setUnlocalizedName("Anvil");
-	public static final Block ebonyOre = new SkyrimBlock(Config.addBlock("Ebony Ore"), Material.iron).setUnlocalizedName("EbonyOre");
-	public static final Block malachiteOre = new SkyrimBlock(Config.addBlock("Malachite Ore"), Material.iron).setUnlocalizedName("MalachiteOre");
-	public static final Block moonstoneOre = new SkyrimBlock(Config.addBlock("Moonstone Ore"), Material.iron).setUnlocalizedName("MoonstoneOre");
+	public static final Block anvil = new SkyrimAnvil(Config.addBlock("Anvil")).setUnlocalizedName("anvil");
+	public static final Block ebonyOre = new SkyrimBlock(Config.addBlock("Ebony Ore"), Material.iron).setUnlocalizedName("ebonyOre");
+	public static final Block malachiteOre = new SkyrimBlock(Config.addBlock("Malachite Ore"), Material.iron).setUnlocalizedName("malachiteOre");
+	public static final Block moonstoneOre = new SkyrimBlock(Config.addBlock("Moonstone Ore"), Material.iron).setUnlocalizedName("moonstoneOre");
 	
 	public static final Block wall1 = new SkyrimBlock(Config.addBlock("Wall"), Material.rock).setUnlocalizedName("wall1");
 	

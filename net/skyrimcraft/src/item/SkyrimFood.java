@@ -29,7 +29,7 @@ public class SkyrimFood extends ItemFood
 	
 	public EnumAction getItemUseAction(ItemStack par1ItemStack)
     {
-		if(itemID == SkyrimItems.manaPotion.itemID || itemID == SkyrimItems.extraMagickaPotion.itemID)
+		if(itemID == SkyrimItems.manaPotion.itemID)
 		{
 			return EnumAction.drink;
 		}

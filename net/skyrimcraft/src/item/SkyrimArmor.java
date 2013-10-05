@@ -1,12 +1,16 @@
 package net.skyrimcraft.src.item;
 
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.skyrimcraft.src.base.SkyrimcraftII;
 import net.skyrimcraft.src.base.Util;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class SkyrimArmor extends ItemArmor
 {
