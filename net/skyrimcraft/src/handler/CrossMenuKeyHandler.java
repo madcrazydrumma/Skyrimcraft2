@@ -4,6 +4,7 @@ import java.util.EnumSet;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.skyrimcraft.src.base.PlayerNBT;
 import net.skyrimcraft.src.base.SkyrimcraftII;
 
 import org.lwjgl.input.Keyboard;
@@ -27,7 +28,17 @@ public class CrossMenuKeyHandler extends KeyHandler
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat)
 	{
 		Minecraft mc = Minecraft.getMinecraft();
-
+		
+		PlayerNBT props = PlayerNBT.get(mc.thePlayer);
+		
+		if (props == null || props.getMaxMana() == 0)
+		{
+			return;
+		}
+		
+		props.consumeMana(4);
+		System.out.println(props.currentMana);
+		
 		if(mc.currentScreen == null)
 		{
 			mc.thePlayer.openGui(SkyrimcraftII.instance, 21, mc.theWorld, mc.thePlayer.chunkCoordX, mc.thePlayer.chunkCoordY, mc.thePlayer.chunkCoordZ);

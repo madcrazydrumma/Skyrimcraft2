@@ -9,6 +9,7 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.skyrimcraft.src.base.PlayerNBT;
 
 import org.lwjgl.opengl.GL11;
 
@@ -19,13 +20,21 @@ public class GuiSkyrimIngame extends Gui
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
 	public void renderGameOverlay(RenderGameOverlayEvent event )
 	{
-		if(event.isCancelable() || event.type != ElementType.EXPERIENCE)
+		if(event.type == ElementType.HEALTH || event.type == ElementType.ARMOR
+				|| event.type == ElementType.FOOD || event.type == ElementType.EXPERIENCE)
 		{
+			event.setCanceled(true);
 			return;
 		}
 		int width = event.resolution.getScaledWidth();
 		int height = event.resolution.getScaledHeight();
 		FontRenderer fontrenderer = mc.fontRenderer;
+		PlayerNBT props = PlayerNBT.get(this.mc.thePlayer);
+		
+		if (props == null || props.getMaxMana() == 0)
+		{
+			return;
+		}
 		
 		drawRect(width / 2 - 93, 10, width / 2 + 94, 22, 0xCC000000);
 		ResourceLocation icons = new ResourceLocation("skyrimcraftii", "textures/gui/icons.png");
@@ -39,12 +48,15 @@ public class GuiSkyrimIngame extends Gui
 		drawTexturedModalRect(width - 120, height - 40, 0, 51, 102, 10);
 		
 		//Checking stuff for mana and health and stamina
+		float magicka = (float) (props.maxMana * 4.1);
+		float health = (float) (mc.thePlayer.getHealth() * 4.1);
+		float stamina = (float) (mc.thePlayer.getFoodStats().getFoodLevel() * 4.1);
 		//End checking stuff
 		
 		//INNER BARS
-		drawTexturedModalRect(31, height - 38, 11, 64, 82, 6); //mana
-		drawTexturedModalRect(width / 2 - 39, height - 38, 11, 72, 82, 6); //health
-		drawTexturedModalRect(width - 109, height - 38, 11, 80, 82, 6); //stamina
+		drawTexturedModalRect(31, height - 38, 11, 64, (int)magicka, 6); //mana
+		drawTexturedModalRect(width / 2 - 39, height - 38, 11, 72, (int)health, 6); //health
+		drawTexturedModalRect(width - 109, height - 38, 11, 80, (int)stamina, 6); //stamina
 		
 		int r = 0;
 		if (mc.thePlayer.rotationYaw < 0) {
@@ -64,8 +76,7 @@ public class GuiSkyrimIngame extends Gui
 			drawCenteredString(fontrenderer, "E", (width / 2) - 90, 13, 0xffffff);
 			drawCenteredString(fontrenderer, "W", (width / 2) + 90, 13, 0xffffff);
 		} else if (!flag4) {
-			drawCenteredString(fontrenderer, flag2 ? "N" : "",
-					(width / 2 - r) + 180, 13, 0xffffff);
+			drawCenteredString(fontrenderer, flag2 ? "N" : "", (width / 2 - r) + 180, 13, 0xffffff);
 
 			if (!flag1) {
 				r = r - 360;
