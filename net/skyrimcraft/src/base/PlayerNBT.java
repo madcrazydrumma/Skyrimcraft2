@@ -3,33 +3,30 @@ package net.skyrimcraft.src.base;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 
+import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.network.Player;
 
 public class PlayerNBT implements IExtendedEntityProperties
 {
-	public final static String EXT_PROP_NAME = "PlayerNBT";
+	public final static String EXT_PROP_NAME = "SkyrimMana";
+	
+	private final String NBT_TAG_NAME = "currentMana";
 	
 	private EntityPlayer player;
 	
-	public int maxMana, currentMana;
+	public int maxMana;
 	public int MANA_WATCHER = 20;
-	
-	public PlayerNBT(EntityPlayer player) {
-		this.player = player;
-	}
 	
 	public static final void register(EntityPlayer player)
 	{
-		player.registerExtendedProperties(PlayerNBT.EXT_PROP_NAME, new PlayerNBT(player));
+		player.registerExtendedProperties(PlayerNBT.EXT_PROP_NAME, new PlayerNBT());
 	}
 	
 	public static final PlayerNBT get(EntityPlayer player)
@@ -39,33 +36,47 @@ public class PlayerNBT implements IExtendedEntityProperties
 	
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
-		NBTTagCompound properties = (NBTTagCompound) compound.getTag(EXT_PROP_NAME);
-		
-		properties.setInteger("currentMana", this.player.getDataWatcher().getWatchableObjectInt(MANA_WATCHER));
-		
-		compound.setCompoundTag(EXT_PROP_NAME, properties);
+		compound.setInteger(this.NBT_TAG_NAME, this.getCurrentMana());
 	}
 	
 	@Override
 	public void loadNBTData(NBTTagCompound compound) {
-		NBTTagCompound properties = (NBTTagCompound)compound.getTag(EXT_PROP_NAME);
-		this.player.getDataWatcher().updateObject(MANA_WATCHER, properties.getInteger("currentMana"));
+		this.setCurrentMana(compound.getInteger(this.NBT_TAG_NAME));
+	}
+	
+	public final void sync()
+	{
+		ByteArrayOutputStream bos = new ByteArrayOutputStream(8);
+		DataOutputStream outputStream = new DataOutputStream(bos);
+		
+		try {
+			outputStream.writeInt(this.getCurrentMana());
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	
+		Packet250CustomPayload packet = new Packet250CustomPayload("skyrimcraftii", bos.toByteArray());
+		
+		if (this.player.worldObj.isRemote) {
+			EntityClientPlayerMP player1 = (EntityClientPlayerMP) player;
+			player1.sendQueue.addToSendQueue(packet);
+		}
 	}
 	
 	public final boolean consumeMana(int amount)
 	{
-		int mana = this.player.getDataWatcher().getWatchableObjectInt(MANA_WATCHER);
+		int mana = this.getCurrentMana();
 		boolean sufficient = amount <= mana;
 		
 		mana -= (amount < mana ? amount : mana);
-		this.player.getDataWatcher().updateObject(MANA_WATCHER, mana);
+		this.setCurrentMana(mana);
 		
 		return sufficient;
 	}
 	
 	public final void replenishMana()
 	{
-		this.player.getDataWatcher().updateObject(MANA_WATCHER, this.maxMana);
+		this.player.getDataWatcher().updateObject(MANA_WATCHER, Integer.valueOf(this.maxMana));
 	}
 	
 	public final int getCurrentMana()
@@ -75,7 +86,8 @@ public class PlayerNBT implements IExtendedEntityProperties
 	
 	public final void setCurrentMana(int amount)
 	{
-		this.player.getDataWatcher().updateObject(MANA_WATCHER, (amount < this.maxMana ? amount : this.maxMana));
+		this.player.getDataWatcher().updateObject(MANA_WATCHER, Integer.valueOf((amount < this.maxMana ? amount : this.maxMana)));
+		this.sync();
 	}
 	
 	public final void setMaxMana(int amount)
@@ -88,28 +100,10 @@ public class PlayerNBT implements IExtendedEntityProperties
 		return this.maxMana;
 	}
 	
-	public final void sync()
-	{
-		ByteArrayOutputStream bos = new ByteArrayOutputStream(8);
-		DataOutputStream outputStream = new DataOutputStream(bos);
-		
-		try {
-			outputStream.writeInt(this.maxMana);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	
-		Packet250CustomPayload packet = new Packet250CustomPayload("tutchannel", bos.toByteArray());
-		
-		if (FMLCommonHandler.instance().getEffectiveSide().isServer()) {
-			EntityPlayerMP player1 = (EntityPlayerMP) player;
-			PacketDispatcher.sendPacketToPlayer(packet, (Player) player1);
-		}
-	}
-	
 	@Override
 	public void init(Entity entity, World world) {
-		this.maxMana = this.currentMana = 20;
-		this.player.getDataWatcher().addObject(MANA_WATCHER, this.maxMana);
+		this.player = (EntityPlayer) entity;
+		this.maxMana = 20;
+		this.player.getDataWatcher().addObject(MANA_WATCHER, Integer.valueOf(this.maxMana));
 	}
 }

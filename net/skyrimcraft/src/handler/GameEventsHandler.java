@@ -21,16 +21,5 @@ public class GameEventsHandler
 		if (event.entity instanceof EntityPlayer && PlayerNBT.get((EntityPlayer) event.entity) == null) {
 			PlayerNBT.register((EntityPlayer) event.entity);
 		}
-		if (event.entity instanceof EntityPlayer && event.entity.getExtendedProperties(PlayerNBT.EXT_PROP_NAME) == null) {
-			event.entity.registerExtendedProperties(PlayerNBT.EXT_PROP_NAME, new PlayerNBT((EntityPlayer) event.entity));
-		}
-	}
-	
-	@ForgeSubscribe(priority = EventPriority.NORMAL)
-	public void onEntityJoinWorld(EntityJoinWorldEvent event)
-	{
-		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayer) {
-			PlayerNBT.get((EntityPlayer) event.entity).sync();
-		}
 	}
 }

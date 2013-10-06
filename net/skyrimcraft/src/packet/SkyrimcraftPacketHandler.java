@@ -26,7 +26,8 @@ public class SkyrimcraftPacketHandler implements IPacketHandler
 		PlayerNBT props = PlayerNBT.get((EntityPlayer) player);
 		
 		try {
-			props.setMaxMana(inputStream.readInt());
+			int amount = inputStream.readInt();
+			props.setCurrentMana(amount);
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;

@@ -48,7 +48,7 @@ public class GuiSkyrimIngame extends Gui
 		drawTexturedModalRect(width - 120, height - 40, 0, 51, 102, 10);
 		
 		//Checking stuff for mana and health and stamina
-		float magicka = (float) (props.maxMana * 4.1);
+		float magicka = (float) (props.getCurrentMana() * 4.1);
 		float health = (float) (mc.thePlayer.getHealth() * 4.1);
 		float stamina = (float) (mc.thePlayer.getFoodStats().getFoodLevel() * 4.1);
 		//End checking stuff
@@ -102,5 +102,13 @@ public class GuiSkyrimIngame extends Gui
 			drawCenteredString(fontrenderer, flag3 ? "E" : "",
 					(width / 2 + r) - 90, 13, 0xffffff);
 		}
+		
+		if(mc.thePlayer.capabilities.isCreativeMode) {
+			drawString(fontrenderer, "Creative", 10, 10, 0xffffff);
+		} else {
+			drawString(fontrenderer, "Survival", 10, 10, 0xffffff);
+		}
+		
+		drawString(fontrenderer, mc.thePlayer.username, 10, 20, 0xffffff);
 	}
 }

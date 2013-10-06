@@ -29,15 +29,14 @@ public class CrossMenuKeyHandler extends KeyHandler
 	{
 		Minecraft mc = Minecraft.getMinecraft();
 		
-		PlayerNBT props = PlayerNBT.get(mc.thePlayer);
+		/*PlayerNBT props = PlayerNBT.get(mc.thePlayer);
 		
 		if (props == null || props.getMaxMana() == 0)
 		{
 			return;
 		}
 		
-		props.consumeMana(4);
-		System.out.println(props.currentMana);
+		props.consumeMana(4);*/
 		
 		if(mc.currentScreen == null)
 		{
