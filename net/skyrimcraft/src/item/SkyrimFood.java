@@ -33,26 +33,11 @@ public class SkyrimFood extends ItemFood
 	public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
 		super.onEaten(par1ItemStack, par2World, par3EntityPlayer);
-		if(par1ItemStack.itemID == SkyrimItems.manaPotion.itemID) {
-			PlayerNBT props = PlayerNBT.get(par3EntityPlayer);
-			
-			if (props == null || props.getMaxMana() == 0)
-			{
-				return null;
-			}
-			
-			props.replenishMana();
-		}
 		return par1ItemStack;
     }
 	
 	public EnumAction getItemUseAction(ItemStack par1ItemStack)
     {
-		if(itemID == SkyrimItems.manaPotion.itemID)
-		{
-			return EnumAction.drink;
-		}
-		
         return EnumAction.eat;
     }
 }

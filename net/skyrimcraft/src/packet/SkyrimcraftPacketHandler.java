@@ -28,6 +28,8 @@ public class SkyrimcraftPacketHandler implements IPacketHandler
 		try {
 			int amount = inputStream.readInt();
 			props.setCurrentMana(amount);
+			int gold = inputStream.readInt();
+			props.setGold(gold);
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;

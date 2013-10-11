@@ -38,6 +38,14 @@ public class GuiMagic extends GuiScreen
 			drawString(fontRenderer, spellTypes.get(i).toString(), width - 84, (height / 4 ) + (20 * i), 0xffffff);
 		}
 		
+		/*drawGradientRect(width - 180, (height + 50) / 2, width - 20, (height + 50) / 2 + 80, 0xc0101010, 0xd0101010);
+        drawHorizontalLine(width - 178, width - 23, (height + 50) / 2 + 2, 0xc0c9c9c9);
+        drawHorizontalLine(width - 178, width - 23, (height + 50) / 2 + 77, 0xc0c9c9c9);
+        drawVerticalLine(width - 178, (height + 50) / 2 + 77, (height + 50) / 2 + 2, 0xc0c9c9c9);
+        drawVerticalLine(width - 23, (height + 50) / 2 + 77, (height + 50) / 2 + 2, 0xc0c9c9c9);*/
+		
+		//The above will draw a box for describing the spell!
+		
 		super.drawScreen(par1, par2, par3);
 	}
 }

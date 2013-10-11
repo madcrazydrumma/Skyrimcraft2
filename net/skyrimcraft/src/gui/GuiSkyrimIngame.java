@@ -58,6 +58,9 @@ public class GuiSkyrimIngame extends Gui
 		drawTexturedModalRect(width / 2 - 39, height - 38, 11, 72, (int)health, 6); //health
 		drawTexturedModalRect(width - 109, height - 38, 11, 80, (int)stamina, 6); //stamina
 		
+		/*EXP*/
+		int i2 = (int)(this.mc.thePlayer.experience * (float)(182 + 1));
+		
 		int r = 0;
 		if (mc.thePlayer.rotationYaw < 0) {
 			r = -MathHelper.floor_double(mc.thePlayer.rotationYaw % 360);
@@ -110,5 +113,5 @@ public class GuiSkyrimIngame extends Gui
 		}
 		
 		drawString(fontrenderer, mc.thePlayer.username, 10, 20, 0xffffff);
-	}
+    }
 }

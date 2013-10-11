@@ -29,15 +29,6 @@ public class CrossMenuKeyHandler extends KeyHandler
 	{
 		Minecraft mc = Minecraft.getMinecraft();
 		
-		/*PlayerNBT props = PlayerNBT.get(mc.thePlayer);
-		
-		if (props == null || props.getMaxMana() == 0)
-		{
-			return;
-		}
-		
-		props.consumeMana(4);*/
-		
 		if(mc.currentScreen == null)
 		{
 			mc.thePlayer.openGui(SkyrimcraftII.instance, 21, mc.theWorld, mc.thePlayer.chunkCoordX, mc.thePlayer.chunkCoordY, mc.thePlayer.chunkCoordZ);

@@ -11,6 +11,7 @@ import net.skyrimcraft.src.item.SkyrimArrow;
 import net.skyrimcraft.src.item.SkyrimBow;
 import net.skyrimcraft.src.item.SkyrimFood;
 import net.skyrimcraft.src.item.SkyrimItem;
+import net.skyrimcraft.src.item.SkyrimPotion;
 import net.skyrimcraft.src.item.SkyrimShield;
 import net.skyrimcraft.src.item.SkyrimTwoHanded;
 import net.skyrimcraft.src.item.SkyrimWeapon;
@@ -96,7 +97,6 @@ public class SkyrimItems
 	public static final Item carrot = new SkyrimFood(Config.addItem("Carrot"), 2, 2, false).setUnlocalizedName("carrot");
 	public static final Item skooma = new SkyrimFood(Config.addItem("Skooma"), 2, 2, false).setUnlocalizedName("skooma");
 	public static final Item sweetRoll = new SkyrimFood(Config.addItem("Sweet Roll"), 2, 2, false).setUnlocalizedName("sweetRoll");
-	public static final Item manaPotion = new SkyrimFood(Config.addItem("Mana Potion"), 2, 2, false).setUnlocalizedName("manaPotion");
 	public static final Item leatherStrips = new SkyrimItem(Config.addItem("Leather Strips")).setUnlocalizedName("leatherStrips");
 	public static final Item dragonBone = new SkyrimItem(Config.addItem("Dragonbone")).setUnlocalizedName("dragonBone");
 	
@@ -220,6 +220,9 @@ public class SkyrimItems
 	public static final Item ancientNordHelmet = new SkyrimArmor(Config.addItem("Ancient Nord Helmet"), EnumArmorMaterial.DIAMOND, armor, 0, "ancientNord").setUnlocalizedName("ancientNordHelmet");
 	public static final Item ancientNordBoots = new SkyrimArmor(Config.addItem("Ancient Nord Boots"), EnumArmorMaterial.DIAMOND, armor, 3, "ancientNord").setUnlocalizedName("ancientNordBoots");
 	
+	public static final Item minorHealing = new SkyrimPotion(Config.addItem("Potion of Minor Healing"), 0, 0, false).setUnlocalizedName("minorHealing");
+	public static final Item minorMagicka = new SkyrimPotion(Config.addItem("Potion of Minor Magicka"), 0, 0, false).setUnlocalizedName("minorMagicka");
+	
 	public static void add()
 	{
 		SkyrimRegistry.registerItem(cabbage, "Cabbage");
@@ -228,7 +231,6 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(sweetRoll, "Sweet Roll");
 		SkyrimRegistry.registerItem(daedraHeart, "Daedra Heart");
 		SkyrimRegistry.registerItem(leatherStrips, "Leather Strips");
-		SkyrimRegistry.registerItem(manaPotion, "Mana Potion");
 		SkyrimRegistry.registerItem(dragonBone, "Dragonbone");
 		
 		SkyrimRegistry.registerItem(ebonyIngot, "Ebony Ingot");
@@ -353,5 +355,8 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(ancientNordLeggings, "Ancient Nord Leggings");
 		SkyrimRegistry.registerItem(ancientNordHelmet, "Ancient Nord Helmet");
 		SkyrimRegistry.registerItem(ancientNordBoots, "Ancient Nord Boots");
+		
+		SkyrimRegistry.registerItem(minorHealing, "Potion of Minor Healing");
+		SkyrimRegistry.registerItem(minorMagicka, "Potion of Minor Magicka");
 	}
 }
