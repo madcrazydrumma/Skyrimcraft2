@@ -12,15 +12,22 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class RenderImperialGuard extends RenderBiped
 {
 	public ResourceLocation field_110871_a = new ResourceLocation("skyrimcraftii", "textures/mob/imperial_guard_0.png");
+	private LabelRenderer lr;
 	
 	public RenderImperialGuard() {
 		super(new ModelBiped(), 0.5F);
+		lr = new LabelRenderer();
 	}
 	
 	protected ResourceLocation func_110870_a(EntityImperialGuard par1EntityGiantZombie)
     {
         return field_110871_a;
     }
+	
+	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
+	{
+		super.doRender(entity, d, d1, d2, f, f1);
+	}
 	
 	protected ResourceLocation func_110867_a(Entity par1Entity)
     {

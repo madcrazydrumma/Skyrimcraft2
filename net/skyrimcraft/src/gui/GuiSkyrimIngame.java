@@ -3,12 +3,14 @@ package net.skyrimcraft.src.gui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.skyrimcraft.src.base.PlayerNBT;
 
 import org.lwjgl.opengl.GL11;
@@ -18,14 +20,13 @@ public class GuiSkyrimIngame extends Gui
 	private Minecraft mc = Minecraft.getMinecraft();
 	
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
-	public void renderGameOverlay(RenderGameOverlayEvent event )
-	{
-		if(event.type == ElementType.HEALTH || event.type == ElementType.ARMOR
-				|| event.type == ElementType.FOOD || event.type == ElementType.EXPERIENCE)
+	public void renderGameOverlay(RenderGameOverlayEvent event) {
+		if(event.type == ElementType.HEALTH || event.type == ElementType.ARMOR || event.type == ElementType.FOOD || event.type == ElementType.EXPERIENCE)
 		{
 			event.setCanceled(true);
 			return;
 		}
+		
 		int width = event.resolution.getScaledWidth();
 		int height = event.resolution.getScaledHeight();
 		FontRenderer fontrenderer = mc.fontRenderer;
@@ -57,9 +58,11 @@ public class GuiSkyrimIngame extends Gui
 		drawTexturedModalRect(31, height - 38, 11, 64, (int)magicka, 6); //mana
 		drawTexturedModalRect(width / 2 - 39, height - 38, 11, 72, (int)health, 6); //health
 		drawTexturedModalRect(width - 109, height - 38, 11, 80, (int)stamina, 6); //stamina
+		//END INNER BARS
 		
-		/*EXP*/
-		int i2 = (int)(this.mc.thePlayer.experience * (float)(182 + 1));
+		//EXP
+		int exp = (int)(this.mc.thePlayer.experience * (float)(182 + 1));
+		//EXP END
 		
 		int r = 0;
 		if (mc.thePlayer.rotationYaw < 0) {

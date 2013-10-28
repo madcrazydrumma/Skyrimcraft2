@@ -5,6 +5,7 @@ import java.util.Arrays;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.skyrimcraft.src.content.SkyrimBlocks;
+import net.skyrimcraft.src.content.SkyrimDimensions;
 import net.skyrimcraft.src.content.SkyrimEntities;
 import net.skyrimcraft.src.content.SkyrimItems;
 import net.skyrimcraft.src.creativetab.TabSkyrimcraft;
@@ -25,6 +26,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Util.MOD_ID, name = Util.MOD_NAME, version = Util.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"skyrimcraftii"}, packetHandler = SkyrimcraftPacketHandler.class)
@@ -41,7 +43,7 @@ public class SkyrimcraftII
 	@SidedProxy(clientSide = "net.skyrimcraft.src.proxy.ClientProxy", serverSide = "net.skyrimcraft.src.proxy.CommonProxy")
 	public static CommonProxy proxy = new CommonProxy();
 
-	public static final CreativeTabs tab = new TabSkyrimcraft("SkyrimcraftII");
+	public static final CreativeTabs tab = new TabSkyrimcraft("Skyrimcraft II");
 	public static Config config;
 	public static SkyrimAnvilCraftingManager craftingManagerInstance;
 	
@@ -68,6 +70,8 @@ public class SkyrimcraftII
 		SkyrimItems.add();
 		SkyrimRegistry.register();
 		SkyrimEntities.register();
+		SkyrimDimensions.register();
+		LanguageRegistry.instance().addStringLocalization("itemGroup.Skyrimcraft II", "en_US", "Skyrimcraft II");
 	}
 
 	@EventHandler
@@ -78,6 +82,7 @@ public class SkyrimcraftII
 			MinecraftForge.EVENT_BUS.register(new GuiSkyrimIngame());
 			MinecraftForge.EVENT_BUS.register(new SkyrimTickHandler());
 			proxy.addKeybinds();
+			//MinecraftForgeClient.registerItemRenderer(SkyrimItems.daedricGreatsword.itemID, new TwoHandedRenderer());
 		}
 	}
 

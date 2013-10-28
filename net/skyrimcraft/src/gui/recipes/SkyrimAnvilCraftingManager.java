@@ -40,7 +40,7 @@ public class SkyrimAnvilCraftingManager
 	{
 		recipes = new ArrayList();
 		
-		this.addRecipe(new ItemStack(SkyrimItems.leatherStrips, 2), new Object[] {
+		/*this.addRecipe(new ItemStack(SkyrimItems.leatherStrips, 2), new Object[] {
 			"   ", " # ", "   ", Character.valueOf('#'), Item.leather
 		});
 		
@@ -300,7 +300,16 @@ public class SkyrimAnvilCraftingManager
         });
         
 		Collections.sort(this.recipes, new AnvilRecipeSorter(this));
-		System.out.println(this.recipes.size() + " recipes");
+		System.out.println(this.recipes.size() + " recipes");*/
+		
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.leatherStrips, 2), new Object[] {Item.leather});
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.fireWood, 1), new Object[] {Block.wood});
+		
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.ironDagger, 1), new Object[] {Item.ingotIron, SkyrimItems.leatherStrips});
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.ironSword, 1), new Object[] {Item.ingotIron, Item.ingotIron, SkyrimItems.leatherStrips});
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.ironWaraxe, 1), new Object[] {Item.ingotIron, Item.ingotIron, SkyrimItems.leatherStrips, SkyrimItems.leatherStrips});
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.ironMace, 1), new Object[] {Item.ingotIron, Item.ingotIron, Item.ingotIron, SkyrimItems.leatherStrips, SkyrimItems.leatherStrips});
+		this.addShapelessRecipe(new ItemStack(SkyrimItems.ironArrow, 24), new Object[] {Item.ingotIron, SkyrimItems.fireWood});
 	}
 
 	public AnvilShapedRecipes addRecipe(ItemStack par1ItemStack, Object ... par2ArrayOfObj)

@@ -1,5 +1,7 @@
 package net.skyrimcraft.src.item;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.skyrimcraft.src.base.SkyrimcraftII;
@@ -17,6 +19,11 @@ public class SkyrimItem extends Item
 	{
 		this.itemIcon = i.registerIcon(Util.MOD_ID + ":" + this.getName());
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public boolean isFull3D() {
+    	return true;
+    }
 	
 	public String getName()
 	{

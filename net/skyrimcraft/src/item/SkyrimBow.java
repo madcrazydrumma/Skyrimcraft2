@@ -42,6 +42,11 @@ public class SkyrimBow extends ItemBow
 		this.setMaxDamage(1000);
 		this.setCreativeTab(SkyrimcraftII.tab);
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public boolean isFull3D() {
+    	return true;
+    }
 
 	/**
 	 * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount

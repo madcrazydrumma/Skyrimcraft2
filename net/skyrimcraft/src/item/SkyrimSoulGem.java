@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.skyrimcraft.src.base.SkyrimcraftII;
 import net.skyrimcraft.src.base.Util;
 
-public class SkyrimShield extends Item
+public class SkyrimSoulGem extends Item
 {
-	public SkyrimShield(int par1)
+	public SkyrimSoulGem(int par1)
 	{
 		super(par1 - 256);
 		setCreativeTab(SkyrimcraftII.tab);

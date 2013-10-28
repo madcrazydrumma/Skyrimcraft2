@@ -1,5 +1,6 @@
 package net.skyrimcraft.src.content;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -13,6 +14,7 @@ import net.skyrimcraft.src.item.SkyrimFood;
 import net.skyrimcraft.src.item.SkyrimItem;
 import net.skyrimcraft.src.item.SkyrimPotion;
 import net.skyrimcraft.src.item.SkyrimShield;
+import net.skyrimcraft.src.item.SkyrimSoulGem;
 import net.skyrimcraft.src.item.SkyrimTwoHanded;
 import net.skyrimcraft.src.item.SkyrimWeapon;
 import net.skyrimcraft.src.proxy.CommonProxy;
@@ -21,69 +23,82 @@ public class SkyrimItems
 {
 	public static int armor = CommonProxy.addArmor("armor");
 	
-	public static EnumToolMaterial DaedricSword = EnumHelper.addToolMaterial("DaedricSword", 8, -1, 8.0F, 14, 2);
-	public static EnumToolMaterial DaedricDagger = EnumHelper.addToolMaterial("DaedricDagger", 8, -1, 8.0F, 11, 2);
-	public static EnumToolMaterial DaedricWarhammer = EnumHelper.addToolMaterial("DaedricWarhammer", 8, -1, 8.0F, 27, 2);
-	public static EnumToolMaterial DaedricWaraxe = EnumHelper.addToolMaterial("DaedricWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial DaedricMace = EnumHelper.addToolMaterial("DaedricMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial DaedricGreatsword = EnumHelper.addToolMaterial("DaedricGreatsword", 8, -1, 8.0F, 24, 2);
-	public static EnumToolMaterial DaedricBattleaxe = EnumHelper.addToolMaterial("DaedricBattleaxe", 8, -1, 8.0F, 25, 2);
-	
-	public static EnumToolMaterial EbonySword = EnumHelper.addToolMaterial("EbonySword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial EbonyDagger = EnumHelper.addToolMaterial("EbonyDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial EbonyWarhammer = EnumHelper.addToolMaterial("EbonyWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial EbonyWaraxe = EnumHelper.addToolMaterial("EbonyWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial EbonyMace = EnumHelper.addToolMaterial("EbonyMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial EbonyGreatsword = EnumHelper.addToolMaterial("EbonyGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial EbonyBattleaxe = EnumHelper.addToolMaterial("EbonyBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial GlassSword = EnumHelper.addToolMaterial("GlassSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial GlassDagger = EnumHelper.addToolMaterial("GlassDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial GlassWarhammer = EnumHelper.addToolMaterial("GlassWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial GlassWaraxe = EnumHelper.addToolMaterial("GlassWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial GlassMace = EnumHelper.addToolMaterial("GlassMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial GlassGreatsword = EnumHelper.addToolMaterial("GlassGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial GlassBattleaxe = EnumHelper.addToolMaterial("GlassBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial AncientNordSword = EnumHelper.addToolMaterial("AncientNordSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial AncientNordDagger = EnumHelper.addToolMaterial("AncientNordDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial AncientNordWarhammer = EnumHelper.addToolMaterial("AncientNordWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial AncientNordWaraxe = EnumHelper.addToolMaterial("AncientNordWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial AncientNordMace = EnumHelper.addToolMaterial("AncientNordMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial AncientNordGreatsword = EnumHelper.addToolMaterial("AncientNordGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial AncientNordBattleaxe = EnumHelper.addToolMaterial("AncientNordBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial DwarvenSword = EnumHelper.addToolMaterial("DwarvenSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial DwarvenDagger = EnumHelper.addToolMaterial("DwarvenDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial DwarvenWarhammer = EnumHelper.addToolMaterial("DwarvenWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial DwarvenWaraxe = EnumHelper.addToolMaterial("DwarvenWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial DwarvenMace = EnumHelper.addToolMaterial("DwarvenMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial DwarvenGreatsword = EnumHelper.addToolMaterial("DwarvenGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial DwarvenBattleaxe = EnumHelper.addToolMaterial("DwarvenBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial ElvenSword = EnumHelper.addToolMaterial("ElvenSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial ElvenDagger = EnumHelper.addToolMaterial("ElvenDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial ElvenWarhammer = EnumHelper.addToolMaterial("ElvenWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial ElvenWaraxe = EnumHelper.addToolMaterial("ElvenWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial ElvenMace = EnumHelper.addToolMaterial("ElvenMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial ElvenGreatsword = EnumHelper.addToolMaterial("ElvenGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial ElvenBattleaxe = EnumHelper.addToolMaterial("ElvenBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial OrcishSword = EnumHelper.addToolMaterial("OrcishSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial OrcishDagger = EnumHelper.addToolMaterial("OrcishDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial OrcishWarhammer = EnumHelper.addToolMaterial("OrcishWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial OrcishWaraxe = EnumHelper.addToolMaterial("OrcishWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial OrcishMace = EnumHelper.addToolMaterial("OrcishMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial OrcishGreatsword = EnumHelper.addToolMaterial("OrcishGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial OrcishBattleaxe = EnumHelper.addToolMaterial("OrcishBattleaxe", 8, -1, 8.0F, 23, 2);
-	
-	public static EnumToolMaterial DragonboneSword = EnumHelper.addToolMaterial("DragonboneSword", 8, -1, 8.0F, 13, 2);
-	public static EnumToolMaterial DragonboneDagger = EnumHelper.addToolMaterial("DragonboneDagger", 8, -1, 8.0F, 10, 2);
-	public static EnumToolMaterial DragonboneWarhammer = EnumHelper.addToolMaterial("DragonboneWarhammer", 8, -1, 8.0F, 25, 2);
-	public static EnumToolMaterial DragonboneWaraxe = EnumHelper.addToolMaterial("DragonboneWaraxe", 8, -1, 8.0F, 15, 2);
-	public static EnumToolMaterial DragonboneMace = EnumHelper.addToolMaterial("DragonboneMace", 8, -1, 8.0F, 16, 2);
-	public static EnumToolMaterial DragonboneGreatsword = EnumHelper.addToolMaterial("DragonboneGreatsword", 8, -1, 8.0F, 22, 2);
-	public static EnumToolMaterial DragonboneBattleaxe = EnumHelper.addToolMaterial("DragonboneBattleaxe", 8, -1, 8.0F, 23, 2);
+	//Daedric1
+    public static EnumToolMaterial DaedricDagger = EnumHelper.addToolMaterial("DaedricDagger", 0, -1, 0.0F, 2.5F, 2);
+    public static EnumToolMaterial DaedricSword = EnumHelper.addToolMaterial("DaedricSword", 0, -1, 0.0F, 2.8F, 2);
+    public static EnumToolMaterial DaedricWaraxe = EnumHelper.addToolMaterial("DaedricWaraxe", 0, -1, 0.0F, 2.9F, 2);
+    public static EnumToolMaterial DaedricMace = EnumHelper.addToolMaterial("DaedricMace", 0, -1, 0.0F, 3.0F, 2);
+    //Daedric2
+    public static EnumToolMaterial DaedricGreatsword = EnumHelper.addToolMaterial("DaedricGreatsword", 0, -1, 0.0F, 3.8F, 2);
+    public static EnumToolMaterial DaedricBattleaxe = EnumHelper.addToolMaterial("DaedricBattleaxe", 0, -1, 0.0F, 3.9F, 2);
+    public static EnumToolMaterial DaedricWarhammer = EnumHelper.addToolMaterial("DaedricWarhammer", 0, -1, 0.0F, 4.1F, 2);
+   
+    //Ebony1
+    public static EnumToolMaterial EbonyDagger = EnumHelper.addToolMaterial("EbonyDagger", 0, -1, 0.0F, 2.4F, 2);
+    public static EnumToolMaterial EbonySword = EnumHelper.addToolMaterial("EbonySword", 0, -1, 0.0F, 2.7F, 2);
+    public static EnumToolMaterial EbonyWaraxe = EnumHelper.addToolMaterial("EbonyWaraxe", 0, -1, 0.0F, 2.9F, 2);
+    public static EnumToolMaterial EbonyMace = EnumHelper.addToolMaterial("EbonyMace", 0, -1, 0.0F, 3.0F, 2);
+    //Ebony2
+    public static EnumToolMaterial EbonyGreatsword = EnumHelper.addToolMaterial("EbonyGreatsword", 0, -1, 0.0F, 3.6F, 2);
+    public static EnumToolMaterial EbonyBattleaxe = EnumHelper.addToolMaterial("EbonyBattleaxe", 0, -1, 0.0F, 3.7F, 2);
+    public static EnumToolMaterial EbonyWarhammer = EnumHelper.addToolMaterial("EbonyWarhammer", 0, -1, 0.0F, 3.9F, 2);
+   
+    //Glass1
+    public static EnumToolMaterial GlassDagger = EnumHelper.addToolMaterial("GlassDagger", 0, -1, 0.0F, 2.3F, 2);
+    public static EnumToolMaterial GlassSword = EnumHelper.addToolMaterial("GlassSword", 0, -1, 0.0F, 2.6F, 2);
+    public static EnumToolMaterial GlassWaraxe = EnumHelper.addToolMaterial("GlassWaraxe", 0, -1, 0.0F, 2.7F, 2);
+    public static EnumToolMaterial GlassMace = EnumHelper.addToolMaterial("GlassMace", 0, -1, 0.0F, 2.8F, 2);
+    //Glass2
+    public static EnumToolMaterial GlassGreatsword = EnumHelper.addToolMaterial("GlassGreatsword", 0, -1, 0.0F, 3.5F, 2);
+    public static EnumToolMaterial GlassBattleaxe = EnumHelper.addToolMaterial("GlassBattleaxe", 0, -1, 0.0F, 3.6F, 2);
+    public static EnumToolMaterial GlassWarhammer = EnumHelper.addToolMaterial("GlassWarhammer", 0, -1, 0.0F, 3.8F, 2);
+   
+    //Ancient1
+    public static EnumToolMaterial AncientNordSword = EnumHelper.addToolMaterial("AncientNordSword", 0, -1, 0.0F, 2.5F, 2);
+    public static EnumToolMaterial AncientNordWaraxe = EnumHelper.addToolMaterial("AncientNordWaraxe", 0, -1, 0.0F, 2.6F, 2);
+    //Ancient2
+    public static EnumToolMaterial AncientNordGreatsword = EnumHelper.addToolMaterial("AncientNordGreatsword", 0, -1, 0.0F, 3.4F, 2);
+    public static EnumToolMaterial AncientNordBattleaxe = EnumHelper.addToolMaterial("AncientNordBattleaxe", 0, -1, 0.0F, 3.5F, 2);
+   
+    //Dwarven1
+    public static EnumToolMaterial DwarvenDagger = EnumHelper.addToolMaterial("DwarvenDagger", 0, -1, 0.0F, 2.1F, 2);
+    public static EnumToolMaterial DwarvenSword = EnumHelper.addToolMaterial("DwarvenSword", 0, -1, 0.0F, 2.4F, 2);
+    public static EnumToolMaterial DwarvenWaraxe = EnumHelper.addToolMaterial("DwarvenWaraxe", 0, -1, 0.0F, 2.5F, 2);
+    public static EnumToolMaterial DwarvenMace = EnumHelper.addToolMaterial("DwarvenMace", 0, -1, 0.0F, 2.6F, 2);
+    //Dwarven2
+    public static EnumToolMaterial DwarvenGreatsword = EnumHelper.addToolMaterial("DwarvenGreatsword", 0, -1, 0.0F, 3.3F, 2);
+    public static EnumToolMaterial DwarvenBattleaxe = EnumHelper.addToolMaterial("DwarvenBattleaxe", 0, -1, 0.0F, 3.4F, 2);
+    public static EnumToolMaterial DwarvenWarhammer = EnumHelper.addToolMaterial("DwarvenWarhammer", 0, -1, 0.0F, 3.6F, 2);
+   
+    //Elven1
+    public static EnumToolMaterial ElvenDagger = EnumHelper.addToolMaterial("ElvenDagger", 0, -1, 0.0F, 2.2F, 2);
+    public static EnumToolMaterial ElvenSword = EnumHelper.addToolMaterial("ElvenSword", 0, -1, 0.0F, 2.5F, 2);
+    public static EnumToolMaterial ElvenWaraxe = EnumHelper.addToolMaterial("ElvenWaraxe", 0, -1, 0.0F, 2.6F, 2);
+    public static EnumToolMaterial ElvenMace = EnumHelper.addToolMaterial("ElvenMace", 0, -1, 0.0F, 2.7F, 2);
+    //Elven2
+    public static EnumToolMaterial ElvenGreatsword = EnumHelper.addToolMaterial("ElvenGreatsword", 0, -1, 0.0F, 3.4F, 2);
+    public static EnumToolMaterial ElvenBattleaxe = EnumHelper.addToolMaterial("ElvenBattleaxe", 0, -1, 0.0F, 3.5F, 2);
+    public static EnumToolMaterial ElvenWarhammer = EnumHelper.addToolMaterial("ElvenWarhammer", 0, -1, 0.0F, 3.7F, 2);
+   
+    //Orcish1
+    public static EnumToolMaterial OrcishDagger = EnumHelper.addToolMaterial("OrcishDagger", 0, -1, 0.0F, 2.0F, 2);
+    public static EnumToolMaterial OrcishSword = EnumHelper.addToolMaterial("OrcishSword", 0, -1, 0.0F, 2.3F, 2);
+    public static EnumToolMaterial OrcishWaraxe = EnumHelper.addToolMaterial("OrcishWaraxe", 0, -1, 0.0F, 2.4F, 2);
+    public static EnumToolMaterial OrcishMace = EnumHelper.addToolMaterial("OrcishMace", 0, -1, 0.0F, 2.5F, 2);
+    //Orcish2
+    public static EnumToolMaterial OrcishGreatsword = EnumHelper.addToolMaterial("OrcishGreatsword", 0, -1, 0.0F, 3.2F, 2);
+    public static EnumToolMaterial OrcishBattleaxe = EnumHelper.addToolMaterial("OrcishBattleaxe", 0, -1, 0.0F, 3.3F, 2);
+    public static EnumToolMaterial OrcishWarhammer = EnumHelper.addToolMaterial("OrcishWarhammer", 0, -1, 0.0F, 3.5F, 2);
+   
+    //Dragonbone1
+    public static EnumToolMaterial DragonboneDagger = EnumHelper.addToolMaterial("DragonboneDagger", 0, -1, 0.0F, 2.6F, 2);
+    public static EnumToolMaterial DragonboneSword = EnumHelper.addToolMaterial("DragonboneSword", 0, -1, 0.0F, 2.9F, 2);
+    public static EnumToolMaterial DragonboneWaraxe = EnumHelper.addToolMaterial("DragonboneWaraxe", 0, -1, 0.0F, 3.0F, 2);
+    public static EnumToolMaterial DragonboneMace = EnumHelper.addToolMaterial("DragonboneMace", 0, -1, 0.0F, 3.1F, 2);
+    //Dragonbone2
+    public static EnumToolMaterial DragonboneGreatsword = EnumHelper.addToolMaterial("DragonboneGreatsword", 0, -1, 0.0F, 3.9F, 2);
+    public static EnumToolMaterial DragonboneBattleaxe = EnumHelper.addToolMaterial("DragonboneBattleaxe", 0, -1, 0.0F, 4.0F, 2);
+    public static EnumToolMaterial DragonboneWarhammer = EnumHelper.addToolMaterial("DragonboneWarhammer", 0, -1, 0.0F, 4.2F, 2);
 	
 	public static final Item ebonyIngot = new SkyrimItem(Config.addItem("Ebony Ingot")).setUnlocalizedName("ebonyIngot");
 	public static final Item malachiteIngot = new SkyrimItem(Config.addItem("Malachite Ingot")).setUnlocalizedName("malachiteIngot");
@@ -99,6 +114,13 @@ public class SkyrimItems
 	public static final Item sweetRoll = new SkyrimFood(Config.addItem("Sweet Roll"), 2, 2, false).setUnlocalizedName("sweetRoll");
 	public static final Item leatherStrips = new SkyrimItem(Config.addItem("Leather Strips")).setUnlocalizedName("leatherStrips");
 	public static final Item dragonBone = new SkyrimItem(Config.addItem("Dragonbone")).setUnlocalizedName("dragonBone");
+	public static final Item fireWood = new SkyrimItem(Config.addItem("Firewood")).setUnlocalizedName("fireWood");
+	
+	public static final Item pettySoulGem = new SkyrimSoulGem(Config.addItem("Petty Soul Gem")).setUnlocalizedName("pettySoulGem");
+	public static final Item lesserSoulGem = new SkyrimSoulGem(Config.addItem("Lesser Soul Gem")).setUnlocalizedName("lesserSoulGem");
+	public static final Item commonSoulGem = new SkyrimSoulGem(Config.addItem("Common Soul Gem")).setUnlocalizedName("commonSoulGem");
+	public static final Item greaterSoulGem = new SkyrimSoulGem(Config.addItem("Greater Soul Gem")).setUnlocalizedName("greaterSoulGem");
+	public static final Item grandSoulGem = new SkyrimSoulGem(Config.addItem("Grand Soul Gem")).setUnlocalizedName("grandSoulGem");
 	
 	public static final Item daedricSword = new SkyrimWeapon(Config.addItem("Daedric Sword"), DaedricSword).setUnlocalizedName("daedricSword");
 	public static final Item daedricDagger = new SkyrimWeapon(Config.addItem("Daedric Dagger"), DaedricDagger).setUnlocalizedName("daedricDagger");
@@ -185,15 +207,15 @@ public class SkyrimItems
 	public static final Item orcishBow = new SkyrimBow(Config.addItem("Orcish Bow")).setUnlocalizedName("orcishBow");
 	public static final Item orcishArrow = new SkyrimArrow(Config.addItem("Orcish Arrow")).setUnlocalizedName("orcishArrow");
 	
-	public static final Item dragonBoneSword = new SkyrimWeapon(Config.addItem("Dragonbone Sword"), DragonboneSword).setUnlocalizedName("dragonBoneSword");
-	public static final Item dragonBoneDagger = new SkyrimWeapon(Config.addItem("Dragonbone Dagger"), DragonboneDagger).setUnlocalizedName("dragonBoneDagger");
-	public static final Item dragonBoneWarhammer = new SkyrimTwoHanded(Config.addItem("Dragonbone Warhammer"), DragonboneDagger).setUnlocalizedName("dragonBoneWarhammer");
-	public static final Item dragonBoneWaraxe = new SkyrimWeapon(Config.addItem("Dragonbone Waraxe"), DragonboneWaraxe).setUnlocalizedName("dragonBoneWaraxe");
-	public static final Item dragonBoneMace = new SkyrimWeapon(Config.addItem("Dragonbone Mace"), DragonboneMace).setUnlocalizedName("dragonBoneMace");
-	public static final Item dragonBoneGreatsword = new SkyrimTwoHanded(Config.addItem("Dragonbone Greatsword"), DragonboneGreatsword).setUnlocalizedName("dragonBoneGreatsword");
-	public static final Item dragonBoneBattleaxe = new SkyrimTwoHanded(Config.addItem("Dragonbone Battleaxe"), DragonboneBattleaxe).setUnlocalizedName("dragonBoneBattleaxe");
-	public static final Item dragonBoneBow = new SkyrimBow(Config.addItem("Dragonbone Bow")).setUnlocalizedName("dragonBoneBow");
-	public static final Item dragonBoneArrow = new SkyrimArrow(Config.addItem("Dragonbone Arrow")).setUnlocalizedName("dragonBoneArrow");
+	public static final Item dragonBoneSword = new SkyrimWeapon(Config.addItem("Dragonbone Sword"), DragonboneSword).setUnlocalizedName("dragonboneSword");
+	public static final Item dragonBoneDagger = new SkyrimWeapon(Config.addItem("Dragonbone Dagger"), DragonboneDagger).setUnlocalizedName("dragonboneDagger");
+	public static final Item dragonBoneWarhammer = new SkyrimTwoHanded(Config.addItem("Dragonbone Warhammer"), DragonboneDagger).setUnlocalizedName("dragonboneWarhammer");
+	public static final Item dragonBoneWaraxe = new SkyrimWeapon(Config.addItem("Dragonbone Waraxe"), DragonboneWaraxe).setUnlocalizedName("dragonboneWaraxe");
+	public static final Item dragonBoneMace = new SkyrimWeapon(Config.addItem("Dragonbone Mace"), DragonboneMace).setUnlocalizedName("dragonboneMace");
+	public static final Item dragonBoneGreatsword = new SkyrimTwoHanded(Config.addItem("Dragonbone Greatsword"), DragonboneGreatsword).setUnlocalizedName("dragonboneGreatsword");
+	public static final Item dragonBoneBattleaxe = new SkyrimTwoHanded(Config.addItem("Dragonbone Battleaxe"), DragonboneBattleaxe).setUnlocalizedName("dragonboneBattleaxe");
+	public static final Item dragonBoneBow = new SkyrimBow(Config.addItem("Dragonbone Bow")).setUnlocalizedName("dragonboneBow");
+	public static final Item dragonBoneArrow = new SkyrimArrow(Config.addItem("Dragonbone Arrow")).setUnlocalizedName("dragonboneArrow");
 	
 	public static final Item longbow = new SkyrimBow(Config.addItem("Longbow")).setUnlocalizedName("longBow");
 	
@@ -223,6 +245,8 @@ public class SkyrimItems
 	public static final Item minorHealing = new SkyrimPotion(Config.addItem("Potion of Minor Healing"), 0, 0, false).setUnlocalizedName("minorHealing");
 	public static final Item minorMagicka = new SkyrimPotion(Config.addItem("Potion of Minor Magicka"), 0, 0, false).setUnlocalizedName("minorMagicka");
 	
+	public static final Item dragonbornHelmet = new SkyrimArmor(Config.addItem("Dragonborn Helmet"), EnumArmorMaterial.DIAMOND, armor, 0, "dragonBornHelmet").setUnlocalizedName("dragonBornHelmet");
+	
 	public static void add()
 	{
 		SkyrimRegistry.registerItem(cabbage, "Cabbage");
@@ -232,6 +256,13 @@ public class SkyrimItems
 		SkyrimRegistry.registerItem(daedraHeart, "Daedra Heart");
 		SkyrimRegistry.registerItem(leatherStrips, "Leather Strips");
 		SkyrimRegistry.registerItem(dragonBone, "Dragonbone");
+		SkyrimRegistry.registerItem(fireWood, "Firewood");
+		
+		SkyrimRegistry.registerItem(pettySoulGem, "Petty Soul Gem");
+		SkyrimRegistry.registerItem(lesserSoulGem, "Lesser Soul Gem");
+		SkyrimRegistry.registerItem(commonSoulGem, "Common Soul Gem");
+		SkyrimRegistry.registerItem(greaterSoulGem, "Greater Soul Gem");
+		SkyrimRegistry.registerItem(grandSoulGem, "Grand Soul Gem");
 		
 		SkyrimRegistry.registerItem(ebonyIngot, "Ebony Ingot");
 		SkyrimRegistry.registerItem(malachiteIngot, "Malachite Ingot");
@@ -358,5 +389,7 @@ public class SkyrimItems
 		
 		SkyrimRegistry.registerItem(minorHealing, "Potion of Minor Healing");
 		SkyrimRegistry.registerItem(minorMagicka, "Potion of Minor Magicka");
+		
+		SkyrimRegistry.registerItem(dragonbornHelmet, "Dragonborn Helmet");
 	}
 }
