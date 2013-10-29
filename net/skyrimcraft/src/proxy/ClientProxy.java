@@ -50,15 +50,14 @@ public class ClientProxy extends CommonProxy
 		return RenderingRegistry.addNewArmourRendererPrefix(str);
 	}
 	
-	public ModelBiped getArmorModel(int id){
+	private ModelBiped normal = new ModelBiped();
+
+	public ModelBiped getArmorModel(int id) {
 		switch (id) {
 		case 0:
 			return dragonbornHelmet;
-		/*case 1:
-			return tutLegs;*/
 		default:
-			break;
+			return normal;
 		}
-		return dragonbornHelmet;
 	}
 }
